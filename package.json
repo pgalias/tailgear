@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -17,8 +18,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
@@ -30,7 +31,10 @@
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended"
     ],
-    "plugins": ["react", "@typescript-eslint"],
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
     "env": {
       "browser": true,
       "es6": true
@@ -71,8 +75,10 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
+    "autoprefixer": "^9",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -80,6 +86,8 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "postcss": "^7",
+    "prettier": "^2.2.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
