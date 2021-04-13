@@ -1,21 +1,40 @@
-import React, { FunctionComponent, useEffect } from 'react';
-import { useDispatch, useStore } from '../store';
-import { toggleNavigationAction } from '../store/action';
+import React, { FunctionComponent } from 'react';
+import {
+  changeMode,
+  isNavigationOpened,
+  selectMode,
+  toggleNavigationAction,
+  useDispatch,
+  useSelector,
+} from '../store';
+import { Header } from '../header/Header';
+
+import styles from './layout.module.css';
 
 export const Layout: FunctionComponent = () => {
+  const navigationVisibility = useSelector(isNavigationOpened);
+  const currentMode = useSelector(selectMode);
   const dispatch = useDispatch();
-  const state = useStore();
 
-  useEffect(() => {
-    console.log(state, 'state');
-  }, [state]);
+  const onHamburgerClick = () => {
+    dispatch(toggleNavigationAction());
+  };
+
+  const onCopy = () => null;
+
+  const onModeChange = () => {
+    const toggledMode = currentMode === 'preview' ? 'code' : 'preview';
+
+    dispatch(changeMode(toggledMode));
+  };
 
   return (
-    <>
-      <span>State</span>
-      <button type="button" onClick={() => dispatch(toggleNavigationAction())}>
-        clk
-      </button>
-    </>
+    <div className={styles.layout}>
+      <Header
+        onHamburgerClick={onHamburgerClick}
+        onCopy={onCopy}
+        onModeChange={onModeChange}
+      />
+    </div>
   );
 };

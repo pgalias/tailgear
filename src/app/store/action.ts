@@ -2,7 +2,7 @@ import { ActionTypes } from './type';
 import { Action } from './reducer';
 import { Mode } from './state';
 
-export const toggleNavigationAction = (): Action<undefined> => ({
+export const toggleNavigationAction = (): Action => ({
   type: ActionTypes.TOGGLE_NAVIGATION,
 });
 

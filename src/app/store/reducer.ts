@@ -1,7 +1,7 @@
 import { initialState, Mode, State } from './state';
 import { ActionTypes } from './type';
 
-export type Action<T> = {
+export type Action<T = undefined> = {
   type: ActionTypes;
   payload?: T;
 };

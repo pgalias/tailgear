@@ -1,0 +1,15 @@
+.header {
+    @apply container flex items-center py-4;
+}
+
+.navigation {
+    @apply flex-auto text-left;
+}
+
+.button {
+    @apply p-4;
+}
+
+.buttonAccented {
+    @apply p-4 ml-2 bg-blue-100 rounded-lg text-xl;
+}
