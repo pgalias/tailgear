@@ -1,5 +1,6 @@
 .header {
     @apply container flex items-center py-4;
+    grid-area: header;
 }
 
 .navigation {
@@ -11,5 +12,5 @@
 }
 
 .buttonAccented {
-    @apply p-4 ml-2 bg-blue-100 rounded-lg text-xl;
+    @apply p-4 ml-2 bg-blue-50 bg-opacity-60 rounded-lg text-xl;
 }

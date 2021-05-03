@@ -1,11 +1,14 @@
 import React, { FunctionComponent } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from './layout';
 import { StoreProvider } from './store';
 
 const WrappedLayout: FunctionComponent = () => {
   return (
     <StoreProvider>
-      <Layout />
+      <Router>
+        <Layout />
+      </Router>
     </StoreProvider>
   );
 };

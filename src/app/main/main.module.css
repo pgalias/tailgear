@@ -1,0 +1,6 @@
+.main {
+    @apply bg-gray-50 shadow-inner p-36;
+    @apply border-t-2 border-l-2 border-blue-200 border-opacity-30;
+
+    grid-area: main;
+}

@@ -1,0 +1,4 @@
+.navigation {
+    @apply bg-blue-50 bg-opacity-50;
+    grid-area: nav;
+}

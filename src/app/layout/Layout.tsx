@@ -8,11 +8,13 @@ import {
   useSelector,
 } from '../store';
 import { Header } from '../header/Header';
+import { Navigation } from '../navigation/Navigation';
+import { Main } from '../main/Main';
 
 import styles from './layout.module.css';
 
 export const Layout: FunctionComponent = () => {
-  const navigationVisibility = useSelector(isNavigationOpened);
+  const isNavigationVisible = useSelector(isNavigationOpened);
   const currentMode = useSelector(selectMode);
   const dispatch = useDispatch();
 
@@ -29,12 +31,18 @@ export const Layout: FunctionComponent = () => {
   };
 
   return (
-    <div className={styles.layout}>
+    <div
+      className={`${styles.layout} ${
+        !isNavigationVisible ? styles.layoutWithNav : ''
+      }`}
+    >
       <Header
         onHamburgerClick={onHamburgerClick}
         onCopy={onCopy}
         onModeChange={onModeChange}
       />
+      {isNavigationVisible && <Navigation />}
+      <Main />
     </div>
   );
 };
