@@ -9,6 +9,7 @@ export const Main: FunctionComponent = () => (
       <Route path="/" exact>
         Honey, I`m home
       </Route>
+      <Route path="/contribution">Coming soon</Route>
       {RoutesList()}
     </Switch>
   </main>

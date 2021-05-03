@@ -1,4 +1,28 @@
 .navigation {
-    @apply bg-blue-50 bg-opacity-50;
+    @apply bg-blue-50 bg-opacity-50 text-left text-gray-700 pt-8;
     grid-area: nav;
+}
+
+.wrapper {
+    @apply container-fluid;
+}
+
+.navigation h3 {
+    @apply text-lg;
+}
+
+.navigation ul {
+    @apply text-sm pl-6;
+}
+
+.section {
+    @apply mb-2.5;
+}
+
+.navigation .section svg {
+    @apply w-5 text-sm align-middle;
+}
+
+.currentLink {
+    @apply text-blue-400 text-opacity-80;
 }

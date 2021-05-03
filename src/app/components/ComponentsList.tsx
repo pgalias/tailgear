@@ -1,17 +1,30 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Sections from './sections';
 
-export const ComponentsList = (): JSX.Element[] =>
-  Sections.map(({ title, components }) => (
-    <Fragment key={title}>
-      <h3>{title}</h3>
+type Props = {
+  sectionClassName?: string;
+  activeClassName?: string;
+};
+
+export const ComponentsList = ({
+  sectionClassName,
+  activeClassName,
+}: Props): JSX.Element[] =>
+  Sections.map(({ title, icon, components }) => (
+    <div className={sectionClassName} key={title}>
+      <h3>
+        {icon && <FontAwesomeIcon icon={icon} />} {title}
+      </h3>
       <ul>
         {Object.entries(components).map(([componentName, { url }]) => (
           <li key={componentName}>
-            <Link to={url}>{componentName}</Link>
+            <NavLink to={url} activeClassName={activeClassName}>
+              {componentName}
+            </NavLink>
           </li>
         ))}
       </ul>
-    </Fragment>
+    </div>
   ));

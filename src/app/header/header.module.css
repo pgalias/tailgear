@@ -1,5 +1,5 @@
 .header {
-    @apply container flex items-center py-4;
+    @apply container-fluid flex items-center py-4;
     grid-area: header;
 }
 

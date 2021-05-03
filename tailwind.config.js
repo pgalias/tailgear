@@ -1,11 +1,19 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
-    container: {
+    container: (theme) => ({
       center: true,
-    },
+      padding: {
+        default: theme("spacing.4"),
+        sm: theme("spacing.5"),
+        lg: theme("spacing.6"),
+        xl: theme("spacing.8"),
+      },
+    }),
     fontFamily: {
       sans: ['Merriweather', 'ui-sans-serif', 'system-ui'],
       serif: ['Lato', 'ui-serif', 'Georgia'],
@@ -15,5 +23,38 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    // container-fluid component
+    plugin(({addComponents, theme}) => {
+      const paddings = {
+        sm: theme('spacing.5'),
+        lg: theme('spacing.6'),
+        xl: theme('spacing.8'),
+      };
+      const mediaQueries = Object.entries(theme('screens', {}))
+        .filter(([size]) => ['sm', 'lg', 'xl'].includes(size))
+        .map(([breakpoint, width]) => ({
+          [`@media (min-width: ${width})`]: {
+            '.container-fluid': {
+              paddingLeft: paddings[breakpoint],
+              paddingRight: paddings[breakpoint],
+            }
+          }
+        }));
+
+      addComponents([
+        {
+          '.container-fluid': {
+            width: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: theme("spacing.4"),
+            paddingRight: theme("spacing.4"),
+            ...mediaQueries
+          },
+        },
+        ...mediaQueries
+      ]);
+    })
+  ],
 }
