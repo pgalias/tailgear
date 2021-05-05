@@ -11,7 +11,8 @@ export const Navigation: FunctionComponent = () => (
       <div className={styles.section}>
         <h3>
           <NavLink exact to="/" activeClassName={styles.currentLink}>
-            <FontAwesomeIcon icon={faHome} /> Home
+            <FontAwesomeIcon icon={faHome} />
+            <span> Home</span>
           </NavLink>
         </h3>
       </div>
@@ -22,7 +23,8 @@ export const Navigation: FunctionComponent = () => (
             to="/contribution"
             activeClassName={styles.currentLink}
           >
-            <FontAwesomeIcon icon={faCodeBranch} /> Contribution
+            <FontAwesomeIcon icon={faCodeBranch} />
+            <span> Contribution</span>
           </NavLink>
         </h3>
       </div>

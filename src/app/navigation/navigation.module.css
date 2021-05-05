@@ -1,5 +1,5 @@
 .navigation {
-    @apply bg-blue-50 bg-opacity-50 text-left text-gray-700 pt-8;
+    @apply bg-blue-50 bg-opacity-50 text-left text-gray-700 py-8;
     grid-area: nav;
 }
 
@@ -20,7 +20,11 @@
 }
 
 .navigation .section svg {
-    @apply w-5 text-sm align-middle;
+    @apply w-5 text-sm;
+}
+
+.navigation .section svg + span {
+    @apply align-middle;
 }
 
 .currentLink {

@@ -15,7 +15,8 @@ export const ComponentsList = ({
   Sections.map(({ title, icon, components }) => (
     <div className={sectionClassName} key={title}>
       <h3>
-        {icon && <FontAwesomeIcon icon={icon} />} {title}
+        {icon && <FontAwesomeIcon icon={icon} />}
+        <span> {title}</span>
       </h3>
       <ul>
         {Object.entries(components).map(([componentName, { url }]) => (
