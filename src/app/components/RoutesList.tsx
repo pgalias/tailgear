@@ -8,7 +8,11 @@ const wrapper = (Component: FunctionComponent) => () => {
   const isPreview = useSelector(isPreviewMode);
 
   if (isPreview) {
-    return <Component />;
+    return (
+      <div className="px-9">
+        <Component />
+      </div>
+    );
   }
 
   return <Code component={Component} />;
