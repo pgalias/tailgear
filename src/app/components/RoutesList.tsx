@@ -15,11 +15,11 @@ const wrapper = (Component: FunctionComponent) => () => {
 };
 
 export const RoutesList = (): JSX.Element[] => {
-  const allComponents = Sections.map(({ components }) =>
+  const allComponents = Sections.flatMap(({ components }) =>
     Object.values(components)
   );
 
-  return allComponents.map(([{ url, component }]) => (
+  return allComponents.map(({ url, component }) => (
     <Route
       component={wrapper(component) as FunctionComponent}
       path={url}
