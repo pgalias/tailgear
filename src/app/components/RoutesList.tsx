@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Route } from 'react-router-dom';
 import Sections from './sections';
+import { Code } from '../code';
+import { isPreviewMode, useSelector } from '../store';
+
+const wrapper = (Component: FunctionComponent) => () => {
+  const isPreview = useSelector(isPreviewMode);
+
+  if (isPreview) {
+    return <Component />;
+  }
+
+  return <Code component={Component} />;
+};
 
 export const RoutesList = (): JSX.Element[] => {
   const allComponents = Sections.map(({ components }) =>
@@ -8,6 +20,10 @@ export const RoutesList = (): JSX.Element[] => {
   );
 
   return allComponents.map(([{ url, component }]) => (
-    <Route component={component} path={url} key={url} />
+    <Route
+      component={wrapper(component) as FunctionComponent}
+      path={url}
+      key={url}
+    />
   ));
 };

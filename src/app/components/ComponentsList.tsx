@@ -21,7 +21,8 @@ export const ComponentsList = ({
         {Object.entries(components).map(([componentName, { url }]) => (
           <li key={componentName}>
             <NavLink to={url} activeClassName={activeClassName}>
-              {componentName}
+              <span className="sr-only">{title}</span>
+              <span>{componentName}</span>
             </NavLink>
           </li>
         ))}

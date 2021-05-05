@@ -12,7 +12,7 @@
 }
 
 .navigation ul {
-    @apply text-sm pl-6;
+    @apply text-sm pl-6 capitalize;
 }
 
 .section {

@@ -1,6 +1,12 @@
 .main {
-    @apply bg-gray-50 shadow-inner p-36;
+    @apply bg-gray-50 shadow-inner;
     @apply border-t-2 border-l-2 border-blue-200 border-opacity-30;
+    @apply w-full overflow-x-auto;
 
     grid-area: main;
+}
+
+.wrapper {
+    @apply my-36;
+    width: 100%;
 }
