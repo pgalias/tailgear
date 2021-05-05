@@ -22,7 +22,7 @@ export const ComponentsList = ({
           <li key={componentName}>
             <NavLink to={url} activeClassName={activeClassName}>
               <span className="sr-only">{title}</span>
-              <span>{componentName}</span>
+              <span className="inline-block capitalize">{componentName}</span>
             </NavLink>
           </li>
         ))}
