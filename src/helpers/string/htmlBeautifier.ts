@@ -1,7 +1,7 @@
 /**
  * This function origins from https://stackoverflow.com/a/60338028
  */
-export const format = (html: string): string => {
+export const htmlBeautifier = (html: string): string => {
   const tab = '  ';
   let result = '';
   let indent = '';

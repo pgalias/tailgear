@@ -10,6 +10,9 @@ import {
 import { Header } from '../header/Header';
 import { Navigation } from '../navigation/Navigation';
 import { Main } from '../main/Main';
+import { Storage } from '../../helpers/storage';
+import { StorageKeys } from '../../constants';
+import { Clipboard } from '../../helpers/clipboard';
 
 import styles from './layout.module.css';
 
@@ -22,7 +25,10 @@ export const Layout: FunctionComponent = () => {
     dispatch(toggleNavigationAction());
   };
 
-  const onCopy = () => null;
+  const onCopy = () => {
+    const code = Storage.get<string>(StorageKeys.ComponentCode);
+    Clipboard.write(code);
+  };
 
   const onModeChange = () => {
     const toggledMode = currentMode === 'preview' ? 'code' : 'preview';

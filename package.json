@@ -69,7 +69,8 @@
           "tabWidth": 2,
           "endOfLine": "auto"
         }
-      ]
+      ],
+      "react-hooks/exhaustive-deps": "off"
     }
   },
   "browserslist": {
