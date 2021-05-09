@@ -9,28 +9,66 @@ import {
   InfoAlert,
   InfoWithIconAlert,
 } from '../../../components/alerts';
-import { Section } from '../types';
+import { Section, ActualComponent } from '../types';
+
+const simpleAlerts: ActualComponent = {
+  name: 'Simple',
+  url: '/alerts/simple',
+  redirect: '/alerts/simple/info',
+  variants: [
+    {
+      name: 'Info',
+      url: '/alerts/simple/info',
+      component: InfoAlert,
+    },
+    {
+      name: 'Warning',
+      url: '/alerts/simple/warning',
+      component: WarningAlert,
+    },
+    {
+      name: 'Danger',
+      url: '/alerts/simple/danger',
+      component: DangerAlert,
+    },
+    {
+      name: 'Success',
+      url: '/alerts/simple/success',
+      component: SuccessAlert,
+    },
+  ],
+};
+
+const withIconAlerts: ActualComponent = {
+  name: 'With icon',
+  url: '/alerts/with-icon',
+  redirect: '/alerts/with-icon/info',
+  variants: [
+    {
+      name: 'Info',
+      url: '/alerts/with-icon/info',
+      component: InfoWithIconAlert,
+    },
+    {
+      name: 'Warning',
+      url: '/alerts/with-icon/warning',
+      component: WarningWithIconAlert,
+    },
+    {
+      name: 'Danger',
+      url: '/alerts/with-icon/danger',
+      component: DangerWithIconAlert,
+    },
+    {
+      name: 'Success',
+      url: '/alerts/with-icon/success',
+      component: SuccessWithIconAlert,
+    },
+  ],
+};
 
 export const Alerts: Section = {
   title: 'Alerts',
   icon: faExclamationCircle,
-  components: {
-    info: { component: InfoAlert, url: '/alerts/info' },
-    'info + icon': { component: InfoWithIconAlert, url: '/alerts/info-icon' },
-    warning: { component: WarningAlert, url: '/alerts/warning' },
-    'warning + icon': {
-      component: WarningWithIconAlert,
-      url: '/alerts/warning-icon',
-    },
-    danger: { component: DangerAlert, url: '/alerts/danger' },
-    'danger + icon': {
-      component: DangerWithIconAlert,
-      url: '/alerts/danger-icon',
-    },
-    success: { component: SuccessAlert, url: '/alerts/success' },
-    'success + icon': {
-      component: SuccessWithIconAlert,
-      url: '/alerts/success-icon',
-    },
-  },
+  components: [simpleAlerts, withIconAlerts],
 };

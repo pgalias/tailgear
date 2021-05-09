@@ -8,6 +8,7 @@ type Props = {
   activeClassName?: string;
 };
 
+// TODO: Make sure this don't need to be changed after variants added
 export const ComponentsList = ({
   sectionClassName,
   activeClassName,
@@ -19,11 +20,11 @@ export const ComponentsList = ({
         <span> {title}</span>
       </h3>
       <ul>
-        {Object.entries(components).map(([componentName, { url }]) => (
-          <li key={componentName}>
+        {components.map(({ url, name }) => (
+          <li key={name}>
             <NavLink to={url} activeClassName={activeClassName}>
               <span className="sr-only">{title}</span>
-              <span className="inline-block capitalize">{componentName}</span>
+              <span className="inline-block capitalize">{name}</span>
             </NavLink>
           </li>
         ))}

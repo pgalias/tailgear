@@ -5,7 +5,11 @@ import { Section } from '../types';
 export const Buttons: Section = {
   title: 'Buttons',
   icon: faMousePointer,
-  components: {
-    basic: { component: BasicButton, url: '/buttons/basic' },
-  },
+  components: [
+    {
+      name: 'basic',
+      url: '/buttons/basic',
+      component: BasicButton,
+    },
+  ],
 };
