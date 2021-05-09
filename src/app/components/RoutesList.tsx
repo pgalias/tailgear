@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import Sections from './sections';
 import { Section as SectionType, Component, WithoutVariants } from './types';
 import { Code } from '../code';
-import { isPreviewMode, useSelector } from '../store';
+import { isPreviewMode, useSelector } from '../store/layout';
 
 // TODO: Add second optional parameter -> variants = []
 const wrapper = (

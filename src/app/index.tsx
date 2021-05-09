@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout } from './layout';
-import { StoreProvider } from './store';
+import { StoreProvider } from './store/layout';
 
 const WrappedLayout: FunctionComponent = () => {
   return (

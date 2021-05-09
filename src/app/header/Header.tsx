@@ -7,7 +7,7 @@ import {
   faCode,
   faCopy,
 } from '@fortawesome/free-solid-svg-icons';
-import { isCodeMode, isNavigationOpened, useSelector } from '../store';
+import { isCodeMode, isNavigationOpened, useSelector } from '../store/layout';
 import styles from './header.module.css';
 
 type Props = {
