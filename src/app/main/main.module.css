@@ -2,6 +2,8 @@
     @apply bg-gray-50 shadow-inner;
     @apply border-t-2 border-l-2 border-blue-200 border-opacity-30;
     @apply w-full overflow-x-auto;
+    @apply relative;
+    @apply font-mono;
 
     grid-area: main;
 }

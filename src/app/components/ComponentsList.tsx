@@ -1,19 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Sections from './sections';
+import { useSections } from '../store/components';
 
 type Props = {
   sectionClassName?: string;
   activeClassName?: string;
 };
 
-// TODO: Make sure this don't need to be changed after variants added
 export const ComponentsList = ({
   sectionClassName,
   activeClassName,
-}: Props): JSX.Element[] =>
-  Sections.map(({ title, icon, components }) => (
+}: Props): JSX.Element[] => {
+  const sections = useSections();
+
+  return sections.map(({ title, icon, components }) => (
     <div className={sectionClassName} key={title}>
       <h3>
         {icon && <FontAwesomeIcon icon={icon} />}
@@ -31,3 +32,4 @@ export const ComponentsList = ({
       </ul>
     </div>
   ));
+};

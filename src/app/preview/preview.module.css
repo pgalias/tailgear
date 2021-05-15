@@ -1,0 +1,30 @@
+.preview {}
+
+.code {
+    @apply px-9;
+}
+
+.variants {
+    @apply absolute top-0;
+    @apply flex;
+    @apply mt-2 py-2 px-6;
+}
+
+.variant {
+    @apply py-2 px-6;
+    @apply bg-gray-300 bg-opacity-20 text-gray-700;
+}
+
+.variantWrapper:first-of-type .variant {
+    @apply rounded-l;
+}
+.variantWrapper:last-of-type .variant {
+    @apply rounded-r;
+}
+.variantWrapper:not(:first-of-type) .variant {
+    @apply border-l-2 border-gray-300 border-opacity-30;
+}
+
+.selectedVariant {
+    @apply shadow-inner bg-opacity-40;
+}

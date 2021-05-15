@@ -1,42 +1,46 @@
 import React, { FunctionComponent } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Sections from './sections';
-import { Section as SectionType, Component, WithoutVariants } from './types';
 import { Code } from '../code';
-import { isPreviewMode, useSelector } from '../store/layout';
+import {
+  isPreviewMode,
+  useSelector as useLayoutSelector,
+} from '../store/layout';
+import {
+  flattenAllComponents,
+  useSelector as useComponentsSelector,
+  ComponentId,
+  ParentComponent,
+} from '../store/components';
+import { Preview } from '../preview';
 
 // TODO: Add second optional parameter -> variants = []
-const wrapper = (
-  Comp: FunctionComponent,
-  variants: (Component & WithoutVariants)[] | undefined
-) => () => {
-  const isPreview = useSelector(isPreviewMode);
+const wrapper = (Comp: FunctionComponent, id: ComponentId) => () => {
+  const isPreview = useLayoutSelector(isPreviewMode);
 
   if (isPreview) {
-    // TODO: Create a Preview component with variants select and rendering the component itself
     return (
-      <div className="px-9">
-        {variants?.map((variant) => (
-          <p>{variant.name}</p>
-        ))}
+      <Preview id={id}>
         <Comp />
-      </div>
+      </Preview>
     );
   }
 
   return <Code component={Comp} />;
 };
 
-export const RoutesList = (): JSX.Element[] =>
-  (Sections as SectionType[])
-    .flatMap(({ components }) => components)
-    .flatMap((components) => [components, ...(components?.variants || [])])
-    .map(({ redirect, url, component, variants }) => (
-      <Route path={url} key={url} exact>
-        {redirect ? (
-          <Redirect to={redirect} />
-        ) : (
-          wrapper(component as FunctionComponent, variants)()
-        )}
-      </Route>
-    ));
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+export const RoutesList: FunctionComponent = () => {
+  const allComponents = useComponentsSelector(flattenAllComponents);
+
+  return allComponents.map(
+    ({ redirect, url, component, id }: ParentComponent) => {
+      const Comp = wrapper(component as FunctionComponent, id);
+      return (
+        <Route path={url} key={url} exact>
+          {redirect ? <Redirect to={redirect} /> : <Comp />}
+        </Route>
+      );
+    }
+  );
+};

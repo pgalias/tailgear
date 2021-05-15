@@ -8,10 +8,10 @@ import {
   SuccessWithIconAlert,
   InfoAlert,
   InfoWithIconAlert,
-} from '../../../components/alerts';
-import { Section, ActualComponent } from '../types';
+} from '../components/alerts';
+import { Section, Component } from './types';
 
-const simpleAlerts: ActualComponent = {
+const simpleAlerts: Component = {
   name: 'Simple',
   url: '/alerts/simple',
   redirect: '/alerts/simple/info',
@@ -39,7 +39,7 @@ const simpleAlerts: ActualComponent = {
   ],
 };
 
-const withIconAlerts: ActualComponent = {
+const withIconAlerts: Component = {
   name: 'With icon',
   url: '/alerts/with-icon',
   redirect: '/alerts/with-icon/info',

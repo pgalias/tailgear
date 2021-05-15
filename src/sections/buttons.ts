@@ -1,6 +1,6 @@
 import { faMousePointer } from '@fortawesome/free-solid-svg-icons';
-import { BasicButton } from '../../../components/buttons';
-import { Section } from '../types';
+import { BasicButton } from '../components/buttons';
+import { Section } from './types';
 
 export const Buttons: Section = {
   title: 'Buttons',
