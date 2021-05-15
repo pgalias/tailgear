@@ -6,7 +6,7 @@ import {
   toggleNavigationAction,
   useDispatch,
   useSelector,
-} from '../store';
+} from '../store/layout';
 import { Header } from '../header/Header';
 import { Navigation } from '../navigation/Navigation';
 import { Main } from '../main/Main';

@@ -1,33 +1,47 @@
 import React, { FunctionComponent } from 'react';
-import { Route } from 'react-router-dom';
-import Sections from './sections';
+import { Route, Redirect } from 'react-router-dom';
 import { Code } from '../code';
-import { isPreviewMode, useSelector } from '../store';
+import {
+  isPreviewMode,
+  useSelector as useLayoutSelector,
+} from '../store/layout';
+import {
+  flattenAllComponents,
+  useSelector as useComponentsSelector,
+  ComponentId,
+  ParentComponent,
+} from '../store/components';
+import { Preview } from '../preview';
 
-const wrapper = (Component: FunctionComponent) => () => {
-  const isPreview = useSelector(isPreviewMode);
+const wrapper = (Comp: FunctionComponent, id: ComponentId) => () => {
+  const isPreview = useLayoutSelector(isPreviewMode);
 
   if (isPreview) {
     return (
-      <div className="px-9">
-        <Component />
-      </div>
+      <Preview id={id}>
+        <Comp />
+      </Preview>
     );
   }
 
-  return <Code component={Component} />;
+  return <Code component={Comp} />;
 };
 
-export const RoutesList = (): JSX.Element[] => {
-  const allComponents = Sections.flatMap(({ components }) =>
-    Object.values(components)
-  );
+export const RoutesList: FunctionComponent = () => {
+  const allComponents = useComponentsSelector(flattenAllComponents);
 
-  return allComponents.map(({ url, component }) => (
-    <Route
-      component={wrapper(component) as FunctionComponent}
-      path={url}
-      key={url}
-    />
-  ));
+  return (
+    <>
+      {allComponents.map(
+        ({ redirect, url, component, id }: ParentComponent) => {
+          const Comp = wrapper(component as FunctionComponent, id);
+          return (
+            <Route path={url} key={url} exact>
+              {redirect ? <Redirect to={redirect} /> : <Comp />}
+            </Route>
+          );
+        }
+      )}
+    </>
+  );
 };

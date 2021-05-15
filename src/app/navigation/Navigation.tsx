@@ -28,10 +28,10 @@ export const Navigation: FunctionComponent = () => (
           </NavLink>
         </h3>
       </div>
-      {ComponentsList({
-        sectionClassName: styles.section,
-        activeClassName: styles.currentLink,
-      })}
+      <ComponentsList
+        activeClassName={styles.currentLink}
+        sectionClassName={styles.section}
+      />
     </div>
   </nav>
 );

@@ -11,7 +11,7 @@ export const Main: FunctionComponent = () => (
           Honey, I`m home
         </Route>
         <Route path="/contribution">Coming soon</Route>
-        {RoutesList()}
+        <RoutesList />
       </Switch>
     </div>
   </main>
