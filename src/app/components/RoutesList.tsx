@@ -13,12 +13,16 @@ import {
 } from '../store/components';
 import { Preview } from '../preview';
 
-const wrapper = (Comp: FunctionComponent, id: ComponentId) => () => {
+const wrapper = (
+  Comp: FunctionComponent,
+  id: ComponentId,
+  disclaimer?: string
+) => () => {
   const isPreview = useLayoutSelector(isPreviewMode);
 
   if (isPreview) {
     return (
-      <Preview id={id}>
+      <Preview id={id} disclaimer={disclaimer}>
         <Comp />
       </Preview>
     );
@@ -33,8 +37,8 @@ export const RoutesList: FunctionComponent = () => {
   return (
     <>
       {allComponents.map(
-        ({ redirect, url, component, id }: ParentComponent) => {
-          const Comp = wrapper(component as FunctionComponent, id);
+        ({ redirect, url, component, id, disclaimer }: ParentComponent) => {
+          const Comp = wrapper(component as FunctionComponent, id, disclaimer);
           return (
             <Route path={url} key={url} exact>
               {redirect ? <Redirect to={redirect} /> : <Comp />}

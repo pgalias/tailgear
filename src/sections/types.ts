@@ -4,6 +4,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 export type ComponentCommonProps = {
   name: string;
   url: string;
+  disclaimer?: string;
 };
 
 export type ComponentWithoutVariantsProps = {
@@ -23,10 +24,8 @@ export type ComponentWithVariantsProps = {
 // when not then it has to have component prop
 // export type Component = Comp & (WithVariants | WithoutVariants);
 // export type Component = Comp & AllOrNone<WithVariants, WithoutVariants>;
-export type Component = {
-  name: string;
-  url: string;
-} & (ComponentWithVariantsProps | ComponentWithoutVariantsProps);
+export type Component = ComponentCommonProps &
+  (ComponentWithVariantsProps | ComponentWithoutVariantsProps);
 
 export interface Section {
   title: string;

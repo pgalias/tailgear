@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { NavLink } from 'react-router-dom';
+import parse from 'html-react-parser';
 import {
   ComponentId,
   findSectionBy,
@@ -10,10 +11,15 @@ import styles from './preview.module.css';
 
 type Props = {
   id: ComponentId;
+  disclaimer?: string;
   children: React.ReactElement;
 };
 
-export const Preview: FunctionComponent<Props> = ({ id, children }) => {
+export const Preview: FunctionComponent<Props> = ({
+  id,
+  disclaimer,
+  children,
+}) => {
   const variants = useSelector(findVariantsForComponent(id));
   const section = useSelector(findSectionBy(variants?.[0]?.sectionId));
 
@@ -41,6 +47,9 @@ export const Preview: FunctionComponent<Props> = ({ id, children }) => {
         ))}
       </ul>
       <div className={styles.code}>{children}</div>
+      {disclaimer && (
+        <div className={styles.disclaimer}>{parse(disclaimer)}</div>
+      )}
     </div>
   );
 };

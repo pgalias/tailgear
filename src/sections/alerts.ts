@@ -40,6 +40,9 @@ const simpleAlerts: Component = {
   ],
 };
 
+const disclaimerForIconAlerts = (name: string, link: string): string =>
+  `Icon used here: <a href="${link}" target="_blank" rel='noopener'>${name}</a> from Font Awesome 5`;
+
 const withIconAlerts: Component = {
   name: 'With icon',
   url: '/alerts/with-icon',
@@ -49,21 +52,37 @@ const withIconAlerts: Component = {
       name: 'Info',
       url: '/alerts/with-icon/info',
       component: InfoWithIconAlert,
+      disclaimer: disclaimerForIconAlerts(
+        'info-circle',
+        'https://fontawesome.com/icons/info-circle?style=solid'
+      ),
     },
     {
       name: 'Warning',
       url: '/alerts/with-icon/warning',
       component: WarningWithIconAlert,
+      disclaimer: disclaimerForIconAlerts(
+        'exclamation-circle',
+        'https://fontawesome.com/icons/exclamation-circle?style=solid'
+      ),
     },
     {
       name: 'Danger',
       url: '/alerts/with-icon/danger',
       component: DangerWithIconAlert,
+      disclaimer: disclaimerForIconAlerts(
+        'ban',
+        'https://fontawesome.com/icons/ban?style=solid'
+      ),
     },
     {
       name: 'Success',
       url: '/alerts/with-icon/success',
       component: SuccessWithIconAlert,
+      disclaimer: disclaimerForIconAlerts(
+        'check-circle',
+        'https://fontawesome.com/icons/check-circle?style=solid'
+      ),
     },
   ],
 };
