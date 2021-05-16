@@ -17,7 +17,10 @@ export const WithAdditionalContentAlert: FunctionComponent = () => (
     <footer className="mt-4">
       <p className="text-sm">
         Footer of the alert. Put here eg. a{' '}
-        <a className="font-black text-blue-900" href="#">
+        <a
+          className="font-black text-blue-800 border-b-2 border-blue-800 border-dotted"
+          href="#"
+        >
           link
         </a>
       </p>
