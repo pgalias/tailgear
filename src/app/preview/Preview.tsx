@@ -15,7 +15,7 @@ type Props = {
 
 export const Preview: FunctionComponent<Props> = ({ id, children }) => {
   const variants = useSelector(findVariantsForComponent(id));
-  const section = useSelector(findSectionBy(variants[0].sectionId));
+  const section = useSelector(findSectionBy(variants?.[0]?.sectionId));
 
   const setFocusOnLink = (event: React.MouseEvent<HTMLAnchorElement>): void => {
     (event?.target as HTMLAnchorElement)?.focus();
