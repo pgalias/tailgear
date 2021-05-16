@@ -3,7 +3,7 @@
     @apply border-t-2 border-l-2 border-blue-200 border-opacity-30;
     @apply w-full overflow-x-auto;
     @apply relative;
-    @apply font-mono;
+    @apply font-serif;
 
     grid-area: main;
 }

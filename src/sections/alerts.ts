@@ -8,6 +8,7 @@ import {
   SuccessWithIconAlert,
   InfoAlert,
   InfoWithIconAlert,
+  WithAdditionalContentAlert,
 } from '../components/alerts';
 import { Section, Component } from './types';
 
@@ -67,8 +68,14 @@ const withIconAlerts: Component = {
   ],
 };
 
+const withAdditionalContentAlert: Component = {
+  name: 'With additional content',
+  url: '/alerts/with-additional-content',
+  component: WithAdditionalContentAlert,
+};
+
 export const Alerts: Section = {
   title: 'Alerts',
   icon: faExclamationCircle,
-  components: [simpleAlerts, withIconAlerts],
+  components: [simpleAlerts, withIconAlerts, withAdditionalContentAlert],
 };

@@ -6,3 +6,4 @@ export { SuccessAlert } from './Success';
 export { SuccessWithIconAlert } from './SuccessWithIcon';
 export { WarningAlert } from './Warning';
 export { WarningWithIconAlert } from './WarningWithIcon';
+export { WithAdditionalContentAlert } from './WithAdditionalContent';
