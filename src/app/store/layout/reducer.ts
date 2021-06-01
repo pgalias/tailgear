@@ -14,7 +14,11 @@ export const reducer = (
     case ActionTypes.CHANGE_MODE:
       return { ...state, mode: payload as Mode };
     case ActionTypes.TOGGLE_NAVIGATION:
-      return { ...state, isNavigationVisible: !state.isNavigationVisible };
+      return {
+        ...state,
+        isNavigationVisible:
+          typeof payload === 'boolean' ? payload : !state.isNavigationVisible,
+      };
     default:
       return state;
   }

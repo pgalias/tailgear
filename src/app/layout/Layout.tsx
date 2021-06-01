@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import {
   changeMode,
   isNavigationOpened,
@@ -17,6 +17,12 @@ export const Layout: FunctionComponent = () => {
   const isNavigationVisible = useSelector(isNavigationOpened);
   const currentMode = useSelector(selectMode);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const { width } = window.screen;
+
+    dispatch(toggleNavigationAction(width > 1024));
+  }, []);
 
   const onHamburgerClick = () => {
     dispatch(toggleNavigationAction());
