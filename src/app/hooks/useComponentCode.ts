@@ -1,18 +1,17 @@
-import { FunctionComponent, ReactElement, useEffect } from 'react';
+import { FunctionComponent, ReactElement, useEffect, useState } from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { htmlBeautifier } from '../../helpers/string';
-import { Storage } from '../../helpers/storage';
-import { StorageKeys } from '../../constants';
 
 export const useComponentCode = (component: FunctionComponent): string => {
-  const codeString = ReactDOMServer.renderToStaticMarkup(
-    component({}) as ReactElement
-  );
-  const code = htmlBeautifier(codeString);
+  const [codeString, setCodeString] = useState<string>('');
 
   useEffect(() => {
-    Storage.set(StorageKeys.ComponentCode, code);
+    const code = ReactDOMServer.renderToStaticMarkup(
+      component({}) as ReactElement
+    );
+
+    setCodeString(htmlBeautifier(code));
   }, [component]);
 
-  return code;
+  return codeString;
 };

@@ -5,20 +5,17 @@ import {
   faTimes,
   faEye,
   faCode,
-  faCopy,
 } from '@fortawesome/free-solid-svg-icons';
 import { isCodeMode, isNavigationOpened, useSelector } from '../store/layout';
 import styles from './header.module.css';
 
 type Props = {
   onHamburgerClick: () => void;
-  onCopy: () => void;
   onModeChange: () => void;
 };
 
 export const Header: FunctionComponent<Props> = ({
   onHamburgerClick,
-  onCopy,
   onModeChange,
 }) => {
   const isCode = useSelector(isCodeMode);
@@ -42,17 +39,6 @@ export const Header: FunctionComponent<Props> = ({
           />
         </button>
       </div>
-      {isCode && (
-        <button
-          type="button"
-          onClick={onCopy}
-          className={`${styles.button} ${styles.buttonAccented}`}
-          title="Copy"
-        >
-          <span className="sr-only">Copy</span>
-          <FontAwesomeIcon icon={faCopy} aria-hidden="true" />
-        </button>
-      )}
       <button
         type="button"
         onClick={onModeChange}

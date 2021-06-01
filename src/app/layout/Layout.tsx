@@ -10,9 +10,6 @@ import {
 import { Header } from '../header/Header';
 import { Navigation } from '../navigation/Navigation';
 import { Main } from '../main/Main';
-import { Storage } from '../../helpers/storage';
-import { StorageKeys } from '../../constants';
-import { Clipboard } from '../../helpers/clipboard';
 
 import styles from './layout.module.css';
 
@@ -23,11 +20,6 @@ export const Layout: FunctionComponent = () => {
 
   const onHamburgerClick = () => {
     dispatch(toggleNavigationAction());
-  };
-
-  const onCopy = () => {
-    const code = Storage.get<string>(StorageKeys.ComponentCode);
-    Clipboard.write(code);
   };
 
   const onModeChange = () => {
@@ -42,11 +34,7 @@ export const Layout: FunctionComponent = () => {
         !isNavigationVisible ? styles.layoutWithNav : ''
       }`}
     >
-      <Header
-        onHamburgerClick={onHamburgerClick}
-        onCopy={onCopy}
-        onModeChange={onModeChange}
-      />
+      <Header onHamburgerClick={onHamburgerClick} onModeChange={onModeChange} />
       {isNavigationVisible && <Navigation />}
       <Main />
     </div>

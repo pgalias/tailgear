@@ -1,0 +1,9 @@
+.codeWrapper {
+    @apply relative;
+}
+
+.copyCode {
+    @apply absolute right-1 -top-4;
+    @apply text-xs py-1 px-1.5;
+    @apply bg-blue-50 rounded;
+}
