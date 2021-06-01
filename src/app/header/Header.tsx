@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { isNavigationOpened, selectMode, useSelector } from '../store/layout';
 import styles from './header.module.css';
+import { Logo } from '../logo';
 
 type Props = {
   onHamburgerClick: () => void;
@@ -38,6 +39,7 @@ export const Header: FunctionComponent<Props> = ({
             aria-hidden="true"
           />
         </button>
+        <Logo />
       </div>
       {mode !== 'static' && (
         <button

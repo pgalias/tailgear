@@ -4,7 +4,7 @@
 }
 
 .navigation {
-    @apply flex-auto text-left;
+    @apply flex flex-auto items-center text-left;
 }
 
 .button {
