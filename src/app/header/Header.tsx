@@ -6,7 +6,7 @@ import {
   faEye,
   faCode,
 } from '@fortawesome/free-solid-svg-icons';
-import { isCodeMode, isNavigationOpened, useSelector } from '../store/layout';
+import { isNavigationOpened, selectMode, useSelector } from '../store/layout';
 import styles from './header.module.css';
 
 type Props = {
@@ -18,7 +18,7 @@ export const Header: FunctionComponent<Props> = ({
   onHamburgerClick,
   onModeChange,
 }) => {
-  const isCode = useSelector(isCodeMode);
+  const mode = useSelector(selectMode);
   const isNavigationVisible = useSelector(isNavigationOpened);
 
   return (
@@ -39,15 +39,20 @@ export const Header: FunctionComponent<Props> = ({
           />
         </button>
       </div>
-      <button
-        type="button"
-        onClick={onModeChange}
-        className={`${styles.button} ${styles.buttonAccented}`}
-        title={isCode ? 'Preview' : 'Code'}
-      >
-        <span className="sr-only">{isCode ? 'Preview' : 'Code'}</span>
-        <FontAwesomeIcon icon={isCode ? faEye : faCode} aria-hidden="true" />
-      </button>
+      {mode !== 'static' && (
+        <button
+          type="button"
+          onClick={onModeChange}
+          className={`${styles.button} ${styles.buttonAccented}`}
+          title={mode.toUpperCase()}
+        >
+          <span className="sr-only">{mode.toUpperCase()}</span>
+          <FontAwesomeIcon
+            icon={mode === 'preview' ? faEye : faCode}
+            aria-hidden="true"
+          />
+        </button>
+      )}
     </header>
   );
 };
