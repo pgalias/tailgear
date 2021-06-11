@@ -1,10 +1,14 @@
 .navigation {
-    @apply bg-blue-50 bg-opacity-50 text-left text-gray-700 py-8;
+    @apply bg-blue-50 bg-opacity-50 text-left text-gray-700 overflow-hidden relative;
+
+    max-height: 90vh;
     grid-area: nav;
 }
 
 .wrapper {
-    @apply container-fluid;
+    @apply container-fluid overflow-y-scroll py-8;
+
+    height: 100%;
 }
 
 .navigation h3 {
