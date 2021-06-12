@@ -9,8 +9,8 @@ import {
   InfoAlert,
   InfoWithIconAlert,
   WithAdditionalContentAlert,
-} from '../components/alerts';
-import { Section, Component } from './types';
+} from '../../components/alerts';
+import { Block, Component } from '../types';
 
 const simpleAlerts: Component = {
   name: 'Simple',
@@ -93,7 +93,7 @@ const withAdditionalContentAlert: Component = {
   component: WithAdditionalContentAlert,
 };
 
-export const Alerts: Section = {
+export const Alerts: Block = {
   title: 'Alerts',
   icon: faExclamationCircle,
   components: [simpleAlerts, withIconAlerts, withAdditionalContentAlert],

@@ -27,8 +27,13 @@ export type ComponentWithVariantsProps = {
 export type Component = ComponentCommonProps &
   (ComponentWithVariantsProps | ComponentWithoutVariantsProps);
 
-export interface Section {
+export interface Block {
   title: string;
   icon?: IconDefinition;
   components: Component[];
+}
+
+export interface Section {
+  title: string;
+  blocks: Block[];
 }

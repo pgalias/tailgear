@@ -23,8 +23,8 @@
     @apply text-lg;
 }
 
-.navigation ul {
-    @apply text-sm pl-6;
+.navigation h4 {
+    @apply text-lg;
 }
 
 .section {
@@ -37,6 +37,18 @@
 
 .navigation .section svg + span {
     @apply align-middle;
+}
+
+.navigation .section ul {
+    @apply pl-2;
+}
+
+.navigation .block {
+    @apply my-2;
+}
+
+.navigation .block ul {
+    @apply text-sm pl-6;
 }
 
 .currentLink {

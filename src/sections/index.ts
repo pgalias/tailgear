@@ -1,9 +1,3 @@
-import { Alerts } from './alerts';
-import { Buttons } from './buttons';
+import { Elements } from './elements';
 
-const sections = {
-  Alerts,
-  Buttons,
-};
-
-export default Object.values(sections);
+export default [Elements];

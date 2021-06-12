@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import parse from 'html-react-parser';
 import {
   ComponentId,
-  findSectionBy,
+  findBlockBy,
   findVariantsForComponent,
   useSelector,
 } from '../store/components';
@@ -21,7 +21,7 @@ export const Preview: FunctionComponent<Props> = ({
   children,
 }) => {
   const variants = useSelector(findVariantsForComponent(id));
-  const section = useSelector(findSectionBy(variants?.[0]?.sectionId));
+  const section = useSelector(findBlockBy(variants?.[0]?.blockId));
 
   const setFocusOnLink = (event: React.MouseEvent<HTMLAnchorElement>): void => {
     (event?.target as HTMLAnchorElement)?.focus();

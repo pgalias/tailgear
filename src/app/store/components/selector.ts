@@ -1,21 +1,26 @@
 import {
   ComponentId,
+  Block,
   Section,
   ParentComponent,
   ChildComponent,
-  SectionId,
+  BlockId,
 } from './types';
+
+export const flattenAllBlocks = (store: Section[]): Block[] =>
+  store.flatMap(({ blocks }) => blocks);
 
 export const flattenAllComponents = (
   store: Section[]
 ): Array<ParentComponent | ChildComponent> =>
-  store
+  flattenAllBlocks(store)
     .flatMap(({ components }) => components)
     .flatMap((components) => [components, ...(components?.variants || [])]);
 
-export const findSectionBy = (id: SectionId) => (
+export const findBlockBy = (id: BlockId) => (
   store: Section[]
-): Section | undefined => store.find((section) => section.id === id);
+): Block | undefined =>
+  flattenAllBlocks(store).find((block) => block.id === id);
 
 export const findVariantsForComponent = (id: ComponentId) => (
   store: Section[]
