@@ -7,6 +7,10 @@
     @apply flex flex-auto items-center text-left;
 }
 
+.hamburger {
+    @apply md:hidden
+}
+
 .button {
     @apply p-4;
 }

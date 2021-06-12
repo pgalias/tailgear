@@ -26,7 +26,7 @@ export const Header: FunctionComponent<Props> = ({
     <header className={styles.header}>
       <div className={styles.navigation}>
         <button
-          className={styles.button}
+          className={`${styles.button} ${styles.hamburger}`}
           type="button"
           onClick={onHamburgerClick}
           aria-expanded={isNavigationVisible}
