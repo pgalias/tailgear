@@ -6,10 +6,10 @@ import {
   toggleNavigationAction,
   useDispatch,
   useSelector,
-} from '../store/layout';
-import { Header } from '../header/Header';
-import { Navigation } from '../navigation/Navigation';
-import { Main } from '../main/Main';
+} from '../../store/layout';
+import { Header } from '../header';
+import { Navigation } from '../navigation';
+import { Main } from '../main';
 
 import styles from './layout.module.css';
 

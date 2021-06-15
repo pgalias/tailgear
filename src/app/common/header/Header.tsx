@@ -6,7 +6,11 @@ import {
   faEye,
   faCode,
 } from '@fortawesome/free-solid-svg-icons';
-import { isNavigationOpened, selectMode, useSelector } from '../store/layout';
+import {
+  isNavigationOpened,
+  selectMode,
+  useSelector,
+} from '../../store/layout';
 import styles from './header.module.css';
 import { Logo } from '../logo';
 

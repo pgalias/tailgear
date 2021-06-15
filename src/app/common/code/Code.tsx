@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
-import { useComponentCode } from '../hooks/useComponentCode';
-import { Clipboard } from '../../helpers/clipboard';
+import { useComponentCode } from '../../hooks/useComponentCode';
+import { Clipboard } from '../../../helpers/clipboard';
 
 import styles from './code.module.css';
 

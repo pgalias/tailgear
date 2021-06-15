@@ -6,7 +6,7 @@ import {
   findBlockBy,
   findVariantsForComponent,
   useSelector,
-} from '../store/components';
+} from '../../store/components';
 import styles from './preview.module.css';
 
 type Props = {
