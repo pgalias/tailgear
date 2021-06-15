@@ -1,0 +1,39 @@
+.section {
+    @apply mb-2.5;
+}
+
+.sectionTitle {
+    @apply text-lg;
+}
+
+.sectionBlocks {
+    @apply pl-2;
+}
+
+.block {
+    @apply my-2;
+}
+
+.blockTitle {
+    @apply text-lg;
+}
+
+.blockTitle .blockIcon {
+    @apply w-5 text-sm;
+}
+
+.blockName {
+    @apply align-middle;
+}
+
+.blockComponents {
+    @apply text-sm pl-6;
+}
+
+.componentName {
+    @apply inline-block capitalize;
+}
+
+.activeLink {
+    @apply text-blue-400 text-opacity-80;
+}

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
-import { RoutesList } from '../../components';
+import { RoutesList } from '../../routesList';
 import { changeMode, useDispatch } from '../../store/layout';
 import styles from './main.module.css';
 

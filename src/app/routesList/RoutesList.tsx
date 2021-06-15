@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { Code } from '../common/code';
+import { Code } from '../components/code';
 import {
   isPreviewMode,
   useSelector as useLayoutSelector,
@@ -11,7 +11,7 @@ import {
   ComponentId,
   ParentComponent,
 } from '../store/components';
-import { Preview } from '../common/preview';
+import { Preview } from '../components/preview';
 
 const wrapper = (
   Comp: FunctionComponent,
