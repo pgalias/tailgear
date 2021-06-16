@@ -6,25 +6,22 @@ import {
   faEye,
   faCode,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  isNavigationOpened,
-  selectMode,
-  useSelector,
-} from '../../store/layout';
+import { selectMode, useSelector } from '../../store/layout';
 import styles from './header.module.css';
 import { Logo } from '../logo';
 
 type Props = {
+  isNavigationVisible: boolean;
   onHamburgerClick: () => void;
   onModeChange: () => void;
 };
 
 export const Header: FunctionComponent<Props> = ({
+  isNavigationVisible,
   onHamburgerClick,
   onModeChange,
 }) => {
   const mode = useSelector(selectMode);
-  const isNavigationVisible = useSelector(isNavigationOpened);
 
   return (
     <header className={styles.header}>

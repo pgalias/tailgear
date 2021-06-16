@@ -1,31 +1,35 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   changeMode,
-  isNavigationOpened,
   selectMode,
-  toggleNavigationAction,
   useDispatch,
   useSelector,
 } from '../../store/layout';
 import { Header } from '../header';
 import { Navigation } from '../navigation';
 import { Main } from '../main';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
+import { NAVIGATION_VISIBILITY_BREAKPOINT } from '../../constants/navigation';
 
 import styles from './layout.module.css';
 
 export const Layout: FunctionComponent = () => {
-  const isNavigationVisible = useSelector(isNavigationOpened);
+  const [showNavigation, setShowNavigation] = useState(false);
+  const { width } = useWindowDimensions();
+  const { pathname } = useLocation();
   const currentMode = useSelector(selectMode);
   const dispatch = useDispatch();
 
+  // change navigation visibility on route change or window width change
   useEffect(() => {
-    const { width } = window.screen;
+    const shouldNavigationBeVisible = width > NAVIGATION_VISIBILITY_BREAKPOINT;
 
-    dispatch(toggleNavigationAction(width > 1024));
-  }, []);
+    setShowNavigation(shouldNavigationBeVisible);
+  }, [pathname, width]);
 
   const onHamburgerClick = () => {
-    dispatch(toggleNavigationAction());
+    setShowNavigation(!showNavigation);
   };
 
   const onModeChange = () => {
@@ -37,11 +41,15 @@ export const Layout: FunctionComponent = () => {
   return (
     <div
       className={`${styles.layout} ${
-        !isNavigationVisible ? styles.layoutWithNav : ''
+        !showNavigation ? styles.layoutWithNav : ''
       }`}
     >
-      <Header onHamburgerClick={onHamburgerClick} onModeChange={onModeChange} />
-      {isNavigationVisible && <Navigation />}
+      <Header
+        onHamburgerClick={onHamburgerClick}
+        onModeChange={onModeChange}
+        isNavigationVisible={showNavigation}
+      />
+      {showNavigation && <Navigation />}
       <Main />
     </div>
   );
