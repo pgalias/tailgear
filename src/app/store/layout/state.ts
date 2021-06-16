@@ -1,4 +1,4 @@
-export type Mode = 'preview' | 'code' | 'static';
+export type Mode = 'preview' | 'code' | 'live' | 'static';
 
 export interface State {
   isNavigationVisible: boolean;

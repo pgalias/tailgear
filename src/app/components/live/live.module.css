@@ -1,0 +1,13 @@
+.wrapper {
+    @apply grid grid-cols-1 gap-2.5;
+}
+
+.row {
+    @apply relative;
+}
+
+.copyCode {
+    @apply absolute right-1 z-10;
+    @apply text-sm py-1.5 px-2;
+    @apply bg-blue-50 rounded;
+}

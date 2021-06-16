@@ -1,10 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { Code } from '../components/code';
-import {
-  isPreviewMode,
-  useSelector as useLayoutSelector,
-} from '../store/layout';
+import { selectMode, useSelector as useLayoutSelector } from '../store/layout';
 import {
   flattenAllComponents,
   useSelector as useComponentsSelector,
@@ -12,20 +9,25 @@ import {
   ParentComponent,
 } from '../store/components';
 import { Preview } from '../components/preview';
+import { Live } from '../components/live';
 
 const wrapper = (
   Comp: FunctionComponent,
   id: ComponentId,
   disclaimer?: string
 ) => () => {
-  const isPreview = useLayoutSelector(isPreviewMode);
+  const mode = useLayoutSelector(selectMode);
 
-  if (isPreview) {
+  if (mode === 'preview') {
     return (
       <Preview id={id} disclaimer={disclaimer}>
         <Comp />
       </Preview>
     );
+  }
+
+  if (mode === 'live') {
+    return <Live component={Comp} />;
   }
 
   return <Code component={Comp} />;
