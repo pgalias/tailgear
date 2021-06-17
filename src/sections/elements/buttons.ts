@@ -7,9 +7,9 @@ export const Buttons: Block = {
   icon: faMousePointer,
   components: [
     {
-      name: 'basic',
+      name: 'Basic',
       url: '/buttons/basic',
-      component: BasicButton,
+      variants: [{ name: 'Basic', component: BasicButton }],
     },
   ],
 };

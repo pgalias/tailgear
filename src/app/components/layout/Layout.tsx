@@ -1,11 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import {
-  changeMode,
-  selectMode,
-  useDispatch,
-  useSelector,
-} from '../../store/layout';
 import { Header } from '../header';
 import { Navigation } from '../navigation';
 import { Main } from '../main';
@@ -18,8 +12,6 @@ export const Layout: FunctionComponent = () => {
   const [showNavigation, setShowNavigation] = useState(false);
   const { width } = useWindowDimensions();
   const { pathname } = useLocation();
-  const currentMode = useSelector(selectMode);
-  const dispatch = useDispatch();
 
   // change navigation visibility on route change or window width change
   useEffect(() => {
@@ -32,12 +24,6 @@ export const Layout: FunctionComponent = () => {
     setShowNavigation(!showNavigation);
   };
 
-  const onModeChange = () => {
-    const toggledMode = currentMode === 'preview' ? 'code' : 'preview';
-
-    dispatch(changeMode(toggledMode));
-  };
-
   return (
     <div
       className={`${styles.layout} ${
@@ -46,7 +32,6 @@ export const Layout: FunctionComponent = () => {
     >
       <Header
         onHamburgerClick={onHamburgerClick}
-        onModeChange={onModeChange}
         isNavigationVisible={showNavigation}
       />
       {showNavigation && <Navigation />}

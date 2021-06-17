@@ -3,7 +3,6 @@ import {
   Component as DomainComponent,
   Section as DomainSection,
 } from '../../../sections/types';
-import { AllOrNone } from '../../../helpers/types/allOrNone';
 
 export type SectionId = string;
 export type BlockId = string;
@@ -17,18 +16,11 @@ export type Section = Omit<DomainSection, 'blocks'> & {
 export type Block = Omit<DomainBlock, 'components'> & {
   id: BlockId;
   sectionId: SectionId;
-  components: ParentComponent[];
+  components: Component[];
 };
 
-export type ParentComponent = Omit<DomainComponent, 'variants'> & {
+export interface Component extends DomainComponent {
   id: ComponentId;
   blockId: BlockId;
   sectionId: SectionId;
-} & AllOrNone<{ variants: ChildComponent[] }>;
-
-export type ChildComponent = Omit<DomainComponent, 'variants' | 'redirect'> & {
-  id: ComponentId;
-  parentId: ComponentId;
-  blockId: BlockId;
-  sectionId: SectionId;
-};
+}

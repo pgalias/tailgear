@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   findBlockBy,
-  ParentComponent,
+  Component as ComponentType,
   useSelector,
 } from '../../../store/components';
 import styles from './style.module.css';
 
 type Props = {
-  component: ParentComponent;
+  component: ComponentType;
 };
 
 export const Component: FC<Props> = ({ component: { blockId, url, name } }) => {

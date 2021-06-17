@@ -9,6 +9,6 @@
 }
 
 .wrapper {
-    @apply my-36;
+    @apply container-fluid py-8;
     width: 100%;
 }
