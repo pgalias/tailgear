@@ -15,7 +15,7 @@ export const Layout: FunctionComponent = () => {
 
   // change navigation visibility on route change or window width change
   useEffect(() => {
-    const shouldNavigationBeVisible = width > NAVIGATION_VISIBILITY_BREAKPOINT;
+    const shouldNavigationBeVisible = width >= NAVIGATION_VISIBILITY_BREAKPOINT;
 
     setShowNavigation(shouldNavigationBeVisible);
   }, [pathname, width]);
