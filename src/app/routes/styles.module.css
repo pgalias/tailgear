@@ -27,9 +27,10 @@
 }
 
 .copyCode {
-    @apply absolute right-1 z-10;
-    @apply text-sm py-1.5 px-2;
+    @apply xl:absolute xl:top-0 xl:right-1 z-10;
+    @apply py-2.5 px-3 xl:text-sm xl:py-1.5 xl:px-2;
     @apply bg-blue-50 rounded;
+    @apply w-full xl:w-auto;
 }
 
 .disclaimer {
