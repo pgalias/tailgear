@@ -1,16 +1,10 @@
 .navigation {
     @apply bg-blue-50 md:bg-opacity-50;
     @apply text-left text-gray-700;
-    @apply z-10 fixed md:relative;
+    @apply z-20 fixed md:relative;
     @apply top-28 md:top-auto left-0 md:left-auto right-0 md:right-auto bottom-0 md:bottom-auto;
     @apply overflow-hidden;
     grid-area: nav;
-}
-
-@screen md {
-    .navigation {
-        max-height: 90vh;
-    }
 }
 
 .wrapper {
