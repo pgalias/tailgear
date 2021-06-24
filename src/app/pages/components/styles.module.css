@@ -29,8 +29,9 @@
 .copyCode {
     @apply xl:absolute xl:top-0 xl:right-1 z-10;
     @apply py-2.5 px-3 xl:text-sm xl:py-1.5 xl:px-2;
-    @apply bg-blue-50 rounded;
-    @apply w-full xl:w-auto;
+    @apply bg-blue-100 hover:bg-blue-200 rounded transition-colors duration-75 ease-linear;
+    @apply w-96 xl:w-auto;
+    @apply block xl:inline my-4 xl:my-0 mx-auto
 }
 
 .disclaimer {
