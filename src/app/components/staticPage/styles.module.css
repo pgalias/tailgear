@@ -1,0 +1,108 @@
+@import "~prismjs/themes/prism-coy.css";
+
+.wrapper {
+    @apply relative;
+}
+
+.wrapper h1,
+.wrapper h2,
+.wrapper h3 {
+    @apply mt-5 mb-2.5;
+}
+
+.wrapper h4,
+.wrapper h5,
+.wrapper h6 {
+    @apply my-2.5;
+}
+
+.wrapper h1 {
+    @apply text-4xl;
+}
+
+.wrapper h2 {
+    @apply text-3xl;
+}
+
+.wrapper h3 {
+    @apply text-2xl;
+}
+
+.wrapper h4 {
+    @apply text-xl;
+}
+
+.wrapper h5 {
+    @apply text-lg;
+}
+
+.wrapper p {
+    @apply mb-2.5;
+}
+
+.wrapper hr {
+    @apply my-5;
+}
+
+.wrapper blockquote {
+    @apply px-5 py-2.5 border-l-4 border-gray-200;
+}
+
+.wrapper ul, .wrapper ol {
+    @apply mb-2.5 block pl-10 text-sm;
+}
+
+.wrapper ul {
+    @apply list-disc;
+}
+
+.wrapper ol {
+    @apply list-decimal;
+}
+
+.wrapper img {
+    @apply inline-block align-middle;
+    max-width: 35%;
+}
+
+.wrapper p > code,
+.wrapper pre:not([class*='language-']) > code {
+    @apply px-1 py-0.5 text-xs;
+    @apply bg-red-100 text-red-400 rounded-sm;
+}
+
+.wrapper table {
+    @apply mt-0 mb-4 block w-full overflow-auto border-collapse;
+    border-spacing: 0;
+}
+
+.wrapper table th,
+.wrapper table td {
+    @apply py-2 px-3.5;
+}
+
+.wrapper table th {
+    @apply font-semibold border-b-2 border-gray-200;
+}
+
+.wrapper table td {
+    @apply border-gray-200;
+    border-bottom-width: 1px;
+}
+
+.wrapper table tr {
+    @apply bg-white;
+}
+
+.wrapper table tbody tr:nth-child(odd) {
+    @apply bg-gray-50;
+}
+
+.wrapper a {
+    @apply text-blue-400 text-opacity-80;
+}
+
+.wrapper a:hover,
+.wrapper a:focus {
+    @apply border-b-2 border-blue-400 border-dotted;
+}

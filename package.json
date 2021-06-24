@@ -73,6 +73,7 @@
           "endOfLine": "auto"
         }
       ],
+      "import/no-webpack-loader-syntax": "off",
       "react-hooks/exhaustive-deps": "off"
     }
   },
@@ -89,6 +90,8 @@
     ]
   },
   "devDependencies": {
+    "@mapbox/rehype-prism": "^0.6.0",
+    "@mdx-js/loader": "^1.6.22",
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "@types/lodash": "^4.14.168",
     "@types/react-router-dom": "^5.1.7",
@@ -96,6 +99,7 @@
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.21.0",
     "autoprefixer": "^9",
+    "babel-loader": "8.1.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -103,8 +107,14 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "highlight.js": "^11.0.1",
     "postcss": "^7",
     "prettier": "^2.2.1",
+    "prismjs": "^1.23.0",
+    "rehype-highlight": "^4.1.0",
+    "rehype-prism": "^0.1.1",
+    "remark-images": "^2.0.0",
+    "remark-slug": "^6.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
