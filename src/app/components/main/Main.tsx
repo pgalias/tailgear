@@ -1,14 +1,12 @@
-import React, { FunctionComponent } from 'react';
-import { Switch } from 'react-router-dom';
-import { RoutesList } from '../../routes';
+import React, { FC, ReactElement } from 'react';
 import styles from './main.module.css';
 
-export const Main: FunctionComponent = () => (
+type Props = {
+  children: ReactElement;
+};
+
+export const Main: FC<Props> = ({ children }) => (
   <main className={styles.main}>
-    <div className={styles.wrapper}>
-      <Switch>
-        <RoutesList />
-      </Switch>
-    </div>
+    <div className={styles.wrapper}>{children}</div>
   </main>
 );

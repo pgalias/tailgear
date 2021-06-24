@@ -2,8 +2,8 @@ import { faCodeBranch, faHome } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import { FC } from 'react';
 
-import HomeContent from '../staticPages/home.mdx';
-import ContributionContent from '../staticPages/contribution.mdx';
+import HomeContent from '../../staticPages/home.mdx';
+import ContributionContent from '../../staticPages/contribution.mdx';
 
 export type StaticPage = {
   title: string;

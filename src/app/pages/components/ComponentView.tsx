@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from 'react';
 import parse from 'html-react-parser';
-import { Variant as VariantType } from '../../sections/types';
+import { Variant as VariantType } from '../../../sections/types';
 import { Variant } from './Variant';
 import styles from './styles.module.css';
 import {
@@ -9,7 +9,7 @@ import {
   findSectionBy,
   SectionId,
   useSelector,
-} from '../store/components';
+} from '../../store/components';
 
 type Props = {
   name: string;

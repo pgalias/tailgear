@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import parse from 'html-react-parser';
-import { useComponentCode } from '../hooks/useComponentCode';
-import { Clipboard } from '../../helpers/clipboard';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import theme from 'prism-react-renderer/themes/github';
+import { useComponentCode } from '../../hooks/useComponentCode';
+import { Clipboard } from '../../../helpers/clipboard';
 import styles from './styles.module.css';
 
 type Props = {
@@ -27,6 +29,7 @@ export const Variant: FC<Props> = ({
       {isNameVisible && <h5 className={styles.variantName}>{name}</h5>}
       <LiveProvider
         code={code}
+        theme={theme}
         transformCode={(c) =>
           c.replace(/class(?<class>="(\w|\d|[ -:])+")/g, 'className$<class>')
         }

@@ -1,13 +1,18 @@
 import React, { FunctionComponent } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Layout } from './components/layout';
 import { ComponentsProvider } from './store/components';
+import { Pages } from './pages';
 
 const WrappedLayout: FunctionComponent = () => {
   return (
     <ComponentsProvider>
       <Router>
-        <Layout />
+        <Switch>
+          <Layout>
+            <Pages />
+          </Layout>
+        </Switch>
       </Router>
     </ComponentsProvider>
   );

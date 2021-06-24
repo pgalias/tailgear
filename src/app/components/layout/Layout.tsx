@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FC, ReactElement, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from '../header';
 import { Navigation } from '../navigation';
@@ -8,7 +8,11 @@ import { NAVIGATION_VISIBILITY_BREAKPOINT } from '../../constants/navigation';
 
 import styles from './layout.module.css';
 
-export const Layout: FunctionComponent = () => {
+type Props = {
+  children: ReactElement;
+};
+
+export const Layout: FC<Props> = ({ children }) => {
   const [showNavigation, setShowNavigation] = useState(false);
   const { width } = useWindowDimensions();
   const { pathname } = useLocation();
@@ -35,7 +39,7 @@ export const Layout: FunctionComponent = () => {
         isNavigationVisible={showNavigation}
       />
       {showNavigation && <Navigation />}
-      <Main />
+      <Main>{children}</Main>
     </div>
   );
 };
