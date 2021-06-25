@@ -6,3 +6,8 @@ export const Elements: Section = {
   title: 'Elements',
   blocks: [Alerts, Buttons],
 };
+
+export const Modules: Section = {
+  title: 'Modules',
+  blocks: [],
+};

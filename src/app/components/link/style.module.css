@@ -1,0 +1,32 @@
+.section {
+    @apply mt-7;
+}
+
+.section .section {
+    @apply mt-2.5;
+}
+
+.sectionList {
+    @apply pl-2;
+}
+
+.sectionList .sectionList {
+    @apply pl-6;
+}
+
+.section .icon,
+.link .icon {
+    @apply w-5 text-sm;
+}
+
+.sectionTitleText, .linkName {
+    @apply align-middle;
+}
+
+.link {
+    @apply capitalize;
+}
+
+.activeLink {
+    @apply text-blue-400 text-opacity-80;
+}

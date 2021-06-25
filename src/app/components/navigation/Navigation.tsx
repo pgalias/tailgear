@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import styles from './navigation.module.css';
 import { useSections } from '../../store/components';
-import { Section, StaticPage } from './components';
 import { StaticPages } from '../../constants/staticPages';
+import { Link, LinkGroup } from '../link';
 
 export const Navigation: FunctionComponent = () => {
   const sections = useSections();
@@ -11,10 +11,28 @@ export const Navigation: FunctionComponent = () => {
     <nav className={styles.navigation}>
       <div className={styles.wrapper}>
         {StaticPages.map((page) => (
-          <StaticPage page={page} key={page.title} />
+          <Link
+            name={page.title}
+            href={page.url}
+            icon={page.icon}
+            key={page.title}
+          />
         ))}
         {sections.map((section) => (
-          <Section section={section} key={section.id} />
+          <LinkGroup title={section.title} key={section.id}>
+            {section.blocks.map((block) => (
+              <LinkGroup title={block.title} icon={block.icon} key={block.id}>
+                {block.components.map((component) => (
+                  <Link
+                    name={component.name}
+                    section={block.title}
+                    href={component.url}
+                    key={component.id}
+                  />
+                ))}
+              </LinkGroup>
+            ))}
+          </LinkGroup>
         ))}
       </div>
     </nav>
