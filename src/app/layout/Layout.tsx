@@ -1,18 +1,17 @@
-import React, { FC, ReactElement, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Header } from '../header';
-import { Navigation } from '../navigation';
-import { Main } from '../main';
-import { useWindowDimensions } from '../../hooks/useWindowDimensions';
-import { NAVIGATION_VISIBILITY_BREAKPOINT } from '../../constants/navigation';
+import { Header } from '../components/header';
+import { Navigation } from '../components/navigation';
+import { Main } from '../components/main';
+import { useWindowDimensions } from '../hooks/useWindowDimensions';
+import { NAVIGATION_VISIBILITY_BREAKPOINT } from '../constants/navigation';
+import { Pages } from '../pages';
+import { LinksList as StaticLinksList } from '../pages/statics';
+import { LinksList as ComponentsLinksList } from '../pages/components';
 
 import styles from './layout.module.css';
 
-type Props = {
-  children: ReactElement;
-};
-
-export const Layout: FC<Props> = ({ children }) => {
+export const Layout: FC = () => {
   const [showNavigation, setShowNavigation] = useState(false);
   const { width } = useWindowDimensions();
   const { pathname } = useLocation();
@@ -38,8 +37,15 @@ export const Layout: FC<Props> = ({ children }) => {
         onHamburgerClick={onHamburgerClick}
         isNavigationVisible={showNavigation}
       />
-      {showNavigation && <Navigation />}
-      <Main>{children}</Main>
+      {showNavigation && (
+        <Navigation>
+          <StaticLinksList />
+          <ComponentsLinksList />
+        </Navigation>
+      )}
+      <Main>
+        <Pages />
+      </Main>
     </div>
   );
 };
