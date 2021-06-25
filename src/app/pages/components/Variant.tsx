@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { LiveEditor, LiveError, LivePreview } from 'react-live';
 import parse from 'html-react-parser';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import theme from 'prism-react-renderer/themes/github';
 import { useComponentCode } from '../../hooks/useComponentCode';
 import { Clipboard } from '../../../helpers/clipboard';
+import { LiveCoding, LiveEditorStyles } from '../../components/liveCoding';
 import styles from './styles.module.css';
 
 type Props = {
@@ -27,19 +26,13 @@ export const Variant: FC<Props> = ({
   return (
     <div className={styles.variant}>
       {isNameVisible && <h5 className={styles.variantName}>{name}</h5>}
-      <LiveProvider
-        code={code}
-        theme={theme}
-        transformCode={(c) =>
-          c.replace(/class(?<class>="(\w|\d|[ -:])+")/g, 'className$<class>')
-        }
-      >
+      <LiveCoding code={code}>
         <div className={styles.variantCode}>
           <div className={styles.variantCodeRow}>
             <LivePreview />
           </div>
           <div className={styles.variantCodeRow}>
-            <LiveEditor />
+            <LiveEditor style={LiveEditorStyles.day} />
             <LiveError />
             <button
               className={styles.copyCode}
@@ -50,7 +43,7 @@ export const Variant: FC<Props> = ({
             </button>
           </div>
         </div>
-      </LiveProvider>
+      </LiveCoding>
       {disclaimer && <p className={styles.disclaimer}>{parse(disclaimer)}</p>}
     </div>
   );
