@@ -1,4 +1,4 @@
-import uniqueId from 'lodash/uniqueId';
+import uniqueId from 'lodash.uniqueid';
 import {
   Component as DomainComponent,
   Block as DomainBlock,

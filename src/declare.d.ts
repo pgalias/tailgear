@@ -8,3 +8,10 @@ declare module '@mdx-js/react' {
 
   export const MDXProvider: FC<Props> = ({ children, components }) => {};
 }
+
+declare module 'lodash.uniqueid' {
+  // eslint-disable-next-line import/no-extraneous-dependencies
+  import { uniqueId } from '@types/lodash';
+
+  export default uniqueId;
+}
