@@ -10,6 +10,7 @@ type Props = {
   onHamburgerClick: () => void;
 };
 
+// TODO: Color scheme change listener
 export const Header: FunctionComponent<Props> = ({
   isNavigationVisible,
   onHamburgerClick,

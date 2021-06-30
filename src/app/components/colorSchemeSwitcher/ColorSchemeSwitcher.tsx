@@ -28,7 +28,7 @@ export const ColorSchemeSwitcher: FC = () => {
       onClick={onClick}
       title="Toggle color schema"
     >
-      {scheme}
+      <span className={styles.text}>{scheme}</span>
     </button>
   );
 };

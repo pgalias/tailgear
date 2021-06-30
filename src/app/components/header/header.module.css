@@ -3,6 +3,10 @@
     grid-area: header;
 }
 
+:global(.dark) .header {
+    @apply bg-blueGray-800 bg-opacity-95;
+}
+
 .navigation {
     @apply flex flex-auto justify-between items-center text-left;
 }
@@ -13,8 +17,4 @@
 
 .button {
     @apply p-4;
-}
-
-.buttonAccented {
-    @apply p-4 ml-2 bg-blue-50 bg-opacity-60 rounded-lg text-xl;
 }

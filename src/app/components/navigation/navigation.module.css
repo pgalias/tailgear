@@ -7,44 +7,12 @@
     grid-area: nav;
 }
 
+:global(.dark) .navigation {
+    @apply bg-blueGray-700 text-yellow-50;
+}
+
 .wrapper {
     @apply container-fluid overflow-y-scroll py-8;
 
     height: 100%;
-}
-
-.navigation h3 {
-    @apply text-lg;
-}
-
-.navigation h4 {
-    @apply text-lg;
-}
-
-.section {
-    @apply mb-2.5;
-}
-
-.navigation .section svg {
-    @apply w-5 text-sm;
-}
-
-.navigation .section svg + span {
-    @apply align-middle;
-}
-
-.navigation .section ul {
-    @apply pl-2;
-}
-
-.navigation .block {
-    @apply my-2;
-}
-
-.navigation .block ul {
-    @apply text-sm pl-6;
-}
-
-.currentLink {
-    @apply text-blue-400 text-opacity-80;
 }

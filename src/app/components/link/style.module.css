@@ -30,3 +30,7 @@
 .activeLink {
     @apply text-blue-400 text-opacity-80;
 }
+
+:global(.dark) .activeLink {
+    @apply text-teal-200;
+}

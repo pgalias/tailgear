@@ -1,11 +1,15 @@
 .main {
     @apply bg-gray-50 shadow-inner;
-    @apply border-t-2 border-l-2 border-blue-200 border-opacity-30;
+    @apply border-t-2 md:border-l-2 border-blue-200 border-opacity-30;
     @apply w-full overflow-x-auto;
     @apply relative;
     @apply font-serif;
 
     grid-area: main;
+}
+
+:global(.dark) .main {
+    @apply bg-blueGray-600 text-warmGray-50;
 }
 
 .wrapper {

@@ -45,7 +45,11 @@
 }
 
 .wrapper blockquote {
-    @apply px-5 py-2.5 border-l-4 border-gray-200;
+    @apply px-5 py-2.5 border-l-4 border-gray-200 text-gray-500;
+}
+
+:global(.dark) .wrapper blockquote {
+    @apply text-gray-400;
 }
 
 .wrapper ul, .wrapper ol {
@@ -94,8 +98,16 @@
     @apply bg-white;
 }
 
+:global(.dark) .wrapper table tr {
+    @apply bg-blueGray-400;
+}
+
 .wrapper table tbody tr:nth-child(odd) {
     @apply bg-gray-50;
+}
+
+:global(.dark) .wrapper table tbody tr:nth-child(odd) {
+    @apply bg-blueGray-500;
 }
 
 .wrapper a {
