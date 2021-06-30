@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
-// import lightTheme from 'prism-react-renderer/themes/github';
+import lightTheme from 'prism-react-renderer/themes/github';
 import darkTheme from 'prism-react-renderer/themes/palenight';
 import { LiveProvider } from 'react-live';
+import { useColorScheme } from '../../provider/colorScheme';
+import { ColorScheme } from '../../../helpers/colorScheme';
 
 type Props = {
   code: string;
@@ -9,19 +11,27 @@ type Props = {
   children: JSX.Element | JSX.Element[];
 };
 
-// TODO: Color scheme change listener
-export const LiveCoding: FC<Props> = ({ code, disabled = false, children }) => (
-  <LiveProvider
-    code={code}
-    theme={darkTheme}
-    disabled={disabled}
-    transformCode={(c) =>
-      c.replace(/class(?<class>="(\w|\d|[ -:])+")/g, 'className$<class>')
-    }
-  >
-    {children}
-  </LiveProvider>
-);
+const editorThemeMapper = {
+  [ColorScheme.LIGHT]: lightTheme,
+  [ColorScheme.DARK]: darkTheme,
+};
+
+export const LiveCoding: FC<Props> = ({ code, disabled = false, children }) => {
+  const { scheme } = useColorScheme();
+
+  return (
+    <LiveProvider
+      code={code}
+      theme={editorThemeMapper[scheme]}
+      disabled={disabled}
+      transformCode={(c) =>
+        c.replace(/class(?<class>="(\w|\d|[ -:])+")/g, 'className$<class>')
+      }
+    >
+      {children}
+    </LiveProvider>
+  );
+};
 
 export const LiveEditorStyles = {
   day: {

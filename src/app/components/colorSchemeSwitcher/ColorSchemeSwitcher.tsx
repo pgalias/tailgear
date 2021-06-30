@@ -1,23 +1,10 @@
-import React, { FC, useEffect, useState } from 'react';
-import {
-  ColorScheme,
-  getColorScheme,
-  setColorScheme,
-  toggleColorScheme,
-} from '../../../helpers/colorScheme';
+import React, { FC } from 'react';
+import { ColorScheme } from '../../../helpers/colorScheme';
+import { useColorScheme } from '../../provider/colorScheme';
 import styles from './colorSchemeSwitcher.module.css';
 
 export const ColorSchemeSwitcher: FC = () => {
-  const [scheme, setScheme] = useState<ColorScheme>(getColorScheme());
-
-  useEffect(() => {
-    setColorScheme(scheme);
-  }, []);
-
-  const onClick = () => {
-    toggleColorScheme();
-    setScheme(getColorScheme());
-  };
+  const { scheme, toggleScheme } = useColorScheme();
 
   return (
     <button
@@ -25,7 +12,7 @@ export const ColorSchemeSwitcher: FC = () => {
       role="switch"
       aria-checked={scheme === ColorScheme.DARK}
       className={styles.switch}
-      onClick={onClick}
+      onClick={toggleScheme}
       title="Toggle color schema"
     >
       <span className={styles.text}>{scheme}</span>

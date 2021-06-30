@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useSections } from '../../store/components';
+import { useSections } from '../../provider/components';
 import { Link, LinkGroup } from '../../components/link';
 
 export const LinksList: FC = () => {

@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import styles from './header.module.css';
 import { Logo } from '../logo';
+import { useColorScheme } from '../../provider/colorScheme';
+import { ColorScheme } from '../../../helpers/colorScheme';
+import styles from './header.module.css';
 
 type Props = {
   children: JSX.Element | JSX.Element[];
@@ -10,32 +12,41 @@ type Props = {
   onHamburgerClick: () => void;
 };
 
-// TODO: Color scheme change listener
+const hamburgerClassMapper = {
+  [ColorScheme.LIGHT]: styles.hamburgerIconLight,
+  [ColorScheme.DARK]: styles.hamburgerIconDark,
+};
+
 export const Header: FunctionComponent<Props> = ({
   isNavigationVisible,
   onHamburgerClick,
   children,
-}) => (
-  <header className={styles.header}>
-    <div className={styles.navigation}>
-      <div>
-        <button
-          className={`${styles.button} ${styles.hamburger}`}
-          type="button"
-          onClick={onHamburgerClick}
-          aria-expanded={isNavigationVisible}
-          tabIndex={0}
-        >
-          <span className="sr-only">Open the menu</span>
-          <FontAwesomeIcon
-            icon={isNavigationVisible ? faTimes : faBars}
-            size="3x"
-            aria-hidden="true"
-          />
-        </button>
-        <Logo />
+}) => {
+  const { scheme } = useColorScheme();
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.navigation}>
+        <div className={styles.left}>
+          <button
+            className={`${styles.button} ${styles.hamburger}`}
+            type="button"
+            onClick={onHamburgerClick}
+            aria-expanded={isNavigationVisible}
+            tabIndex={0}
+          >
+            <span className={styles.hamburgerText}>Open the menu</span>
+            <FontAwesomeIcon
+              icon={isNavigationVisible ? faTimes : faBars}
+              className={hamburgerClassMapper[scheme]}
+              size="3x"
+              aria-hidden="true"
+            />
+          </button>
+          <Logo />
+        </div>
+        <div>{children}</div>
       </div>
-      <div>{children}</div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};

@@ -4,7 +4,7 @@ import {
   flattenAllComponents,
   useSelector,
   Component,
-} from '../../store/components';
+} from '../../provider/components';
 import { ComponentView } from './ComponentView';
 
 export const RoutesList: FC = () => {

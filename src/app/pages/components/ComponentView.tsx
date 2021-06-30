@@ -9,7 +9,7 @@ import {
   findSectionBy,
   SectionId,
   useSelector,
-} from '../../store/components';
+} from '../../provider/components';
 
 type Props = {
   name: string;

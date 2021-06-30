@@ -7,6 +7,10 @@
     @apply bg-blueGray-800 bg-opacity-95;
 }
 
+.left {
+    @apply flex items-center;
+}
+
 .navigation {
     @apply flex flex-auto justify-between items-center text-left;
 }
@@ -15,6 +19,19 @@
     @apply md:hidden
 }
 
+.hamburgerText {
+    @apply sr-only;
+}
+
+.hamburgerIconLight {
+    @apply text-trueGray-800;
+}
+
+.hamburgerIconDark {
+    @apply text-teal-50;
+}
+
 .button {
     @apply p-4;
 }
+
