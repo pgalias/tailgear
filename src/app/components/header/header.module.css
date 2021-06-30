@@ -1,10 +1,10 @@
 .header {
-    @apply container-fluid flex items-center py-4;
+    @apply container-fluid py-4;
     grid-area: header;
 }
 
 .navigation {
-    @apply flex flex-auto items-center text-left;
+    @apply flex flex-auto justify-between items-center text-left;
 }
 
 .hamburger {

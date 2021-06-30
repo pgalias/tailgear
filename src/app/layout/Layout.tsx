@@ -8,6 +8,7 @@ import { NAVIGATION_VISIBILITY_BREAKPOINT } from '../constants/navigation';
 import { Pages } from '../pages';
 import { LinksList as StaticLinksList } from '../pages/statics';
 import { LinksList as ComponentsLinksList } from '../pages/components';
+import { ColorSchemeSwitcher } from '../components/colorSchemeSwitcher';
 
 import styles from './layout.module.css';
 
@@ -36,7 +37,9 @@ export const Layout: FC = () => {
       <Header
         onHamburgerClick={onHamburgerClick}
         isNavigationVisible={showNavigation}
-      />
+      >
+        <ColorSchemeSwitcher />
+      </Header>
       {showNavigation && (
         <Navigation>
           <StaticLinksList />
