@@ -35,7 +35,9 @@ export const Header: FunctionComponent<Props> = ({
             aria-expanded={isNavigationVisible}
             tabIndex={0}
           >
-            <span className={styles.hamburgerText}>Open the menu</span>
+            <span className={styles.hamburgerText}>
+              {isNavigationVisible ? 'Close the menu' : 'Open the menu'}
+            </span>
             <FontAwesomeIcon
               icon={isNavigationVisible ? faTimes : faBars}
               className={hamburgerClassMapper[scheme]}

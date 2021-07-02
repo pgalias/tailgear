@@ -21,7 +21,6 @@ const simpleAlerts: Component = {
     { name: 'Danger', component: DangerAlert },
     { name: 'Success', component: SuccessAlert },
   ],
-  disclaimer: 'foo bar',
 };
 
 const disclaimerForIconAlerts = (name: string, link: string): string =>

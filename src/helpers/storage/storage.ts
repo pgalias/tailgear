@@ -12,12 +12,6 @@ export class Storage {
   }
 
   static has(key: string): boolean {
-    try {
-      JSON.parse(localStorage.getItem(key) as string);
-
-      return true;
-    } catch {
-      return false;
-    }
+    return !!localStorage.getItem(key);
   }
 }

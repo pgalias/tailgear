@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { useSections } from '../../provider/components';
+import { useSelector, selectSections } from '../../provider/components';
 import { Link, LinkGroup } from '../../components/link';
 
 export const LinksList: FC = () => {
-  const sections = useSections();
+  const sections = useSelector(selectSections);
 
   return (
     <>

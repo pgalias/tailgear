@@ -11,7 +11,7 @@ type Props = {
 const components = {
   code: ({ children }: { children: string }) => (
     <LiveCoding code={children} disabled>
-      <LiveEditor style={LiveEditorStyles.day} />
+      <LiveEditor style={LiveEditorStyles} />
     </LiveCoding>
   ),
 };

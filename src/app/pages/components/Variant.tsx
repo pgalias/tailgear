@@ -32,7 +32,7 @@ export const Variant: FC<Props> = ({
             <LivePreview />
           </div>
           <div className={styles.variantCodeRow}>
-            <LiveEditor style={LiveEditorStyles.day} />
+            <LiveEditor style={LiveEditorStyles} />
             <LiveError />
             <button
               className={styles.copyCode}

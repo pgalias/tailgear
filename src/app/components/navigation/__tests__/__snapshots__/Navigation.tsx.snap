@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app::components::Navigation should render properly 1`] = `
+<nav
+  class="navigation"
+>
+  <div
+    class="wrapper"
+  >
+    <ul>
+      <li>
+        <a
+          href="/foo"
+        >
+          foo
+        </a>
+      </li>
+      <li>
+        <a
+          href="/bar"
+        >
+          bar
+        </a>
+      </li>
+    </ul>
+    <button
+      type="button"
+    >
+      btn
+    </button>
+  </div>
+</nav>
+`;

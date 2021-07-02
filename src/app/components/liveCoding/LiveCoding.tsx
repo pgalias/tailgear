@@ -34,10 +34,8 @@ export const LiveCoding: FC<Props> = ({ code, disabled = false, children }) => {
 };
 
 export const LiveEditorStyles = {
-  day: {
-    borderLeft: '10px solid #60a5fa',
-    borderRight: '1px solid #e5e7eb',
-    borderTop: '1px solid #e5e7eb',
-    borderBottom: '1px solid #e5e7eb',
-  },
+  borderLeft: '10px solid #60a5fa',
+  borderRight: '1px solid #e5e7eb',
+  borderTop: '1px solid #e5e7eb',
+  borderBottom: '1px solid #e5e7eb',
 };

@@ -2,8 +2,14 @@ import { COLOR_SCHEME_STORAGE_KEY, ColorScheme } from './constants';
 import { Storage } from '../storage';
 
 export const getColorScheme = (): ColorScheme => {
-  if (document.documentElement.classList.contains(ColorScheme.DARK)) {
+  const { classList } = document.documentElement;
+
+  if (classList.contains(ColorScheme.DARK)) {
     return ColorScheme.DARK;
+  }
+
+  if (classList.contains(ColorScheme.LIGHT)) {
+    return ColorScheme.LIGHT;
   }
 
   if (
