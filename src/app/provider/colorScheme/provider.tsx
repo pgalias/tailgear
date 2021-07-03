@@ -3,11 +3,13 @@ import React, {
   FC,
   ReactElement,
   useContext,
+  useEffect,
   useState,
 } from 'react';
 import {
   ColorScheme,
   getColorScheme,
+  applyColorScheme,
   toggleColorScheme,
 } from '../../../helpers/colorScheme';
 
@@ -33,9 +35,12 @@ export const ColorSchemeProvider: FC<{ children: ReactElement }> = ({
 }) => {
   const [scheme, setScheme] = useState(getColorScheme());
 
+  useEffect(() => {
+    applyColorScheme(scheme);
+  }, [scheme]);
+
   const toggleScheme = () => {
-    toggleColorScheme();
-    setScheme(getColorScheme());
+    setScheme(toggleColorScheme);
   };
 
   return (
