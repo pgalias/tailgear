@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tailgear/static/css/main.03defaf4.chunk.css",
+    "main.js": "/tailgear/static/js/main.591c8b42.chunk.js",
+    "main.js.map": "/tailgear/static/js/main.591c8b42.chunk.js.map",
+    "runtime-main.js": "/tailgear/static/js/runtime-main.bba229b2.js",
+    "runtime-main.js.map": "/tailgear/static/js/runtime-main.bba229b2.js.map",
+    "static/css/2.23bf27c0.chunk.css": "/tailgear/static/css/2.23bf27c0.chunk.css",
+    "static/js/2.233f1b4e.chunk.js": "/tailgear/static/js/2.233f1b4e.chunk.js",
+    "static/js/2.233f1b4e.chunk.js.map": "/tailgear/static/js/2.233f1b4e.chunk.js.map",
+    "static/js/3.6a978946.chunk.js": "/tailgear/static/js/3.6a978946.chunk.js",
+    "static/js/3.6a978946.chunk.js.map": "/tailgear/static/js/3.6a978946.chunk.js.map",
+    "index.html": "/tailgear/index.html",
+    "static/css/2.23bf27c0.chunk.css.map": "/tailgear/static/css/2.23bf27c0.chunk.css.map",
+    "static/css/main.03defaf4.chunk.css.map": "/tailgear/static/css/main.03defaf4.chunk.css.map",
+    "static/js/2.233f1b4e.chunk.js.LICENSE.txt": "/tailgear/static/js/2.233f1b4e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bba229b2.js",
+    "static/css/2.23bf27c0.chunk.css",
+    "static/js/2.233f1b4e.chunk.js",
+    "static/css/main.03defaf4.chunk.css",
+    "static/js/main.591c8b42.chunk.js"
+  ]
+}
