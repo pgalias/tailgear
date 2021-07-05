@@ -7,7 +7,7 @@ import { ColorSchemeProvider } from './provider/colorScheme';
 export const App: FunctionComponent = () => (
   <ComponentsProvider>
     <ColorSchemeProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Layout />
         </Switch>

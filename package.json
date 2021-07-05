@@ -2,7 +2,7 @@
   "name": "tailwork",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://pgalias.github.io/tailgear",
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@fortawesome/fontawesome-common-types": "^0.2.35",
@@ -35,10 +35,11 @@
     "build": "craco build",
     "test": "craco test --testPathIgnorePatterns=fixtures.ts",
     "test:ci": "craco test --collectCoverage --watchAll=false --testPathIgnorePatterns=fixtures.ts --maxWorkers=4",
-    "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -72,14 +73,7 @@
       "linebreak-style": "off",
       "import/prefer-default-export": "off",
       "react/prop-types": "off",
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "tabWidth": 2,
-          "endOfLine": "auto"
-        }
-      ],
+      "prettier/prettier": "error",
       "import/no-webpack-loader-syntax": "off",
       "react-hooks/exhaustive-deps": "off"
     }
@@ -117,6 +111,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.2.3",
     "highlight.js": "^11.0.1",
     "history": "^5.0.0",
     "husky": "^7.0.0",
