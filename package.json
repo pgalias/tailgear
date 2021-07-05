@@ -75,7 +75,8 @@
       "react/prop-types": "off",
       "prettier/prettier": "error",
       "import/no-webpack-loader-syntax": "off",
-      "react-hooks/exhaustive-deps": "off"
+      "react-hooks/exhaustive-deps": "off",
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     }
   },
   "browserslist": {

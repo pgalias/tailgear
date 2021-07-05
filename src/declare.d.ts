@@ -6,6 +6,7 @@ declare module '@mdx-js/react' {
     components: unknown;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   export const MDXProvider: FC<Props> = ({ children, components }) => {};
 }
 
