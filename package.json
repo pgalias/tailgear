@@ -1,8 +1,8 @@
 {
-  "name": "tailwork",
+  "name": "zephyrus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pgalias.github.io/tailgear",
+  "homepage": "https://pgalias.github.io/zephyrus",
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@fortawesome/fontawesome-common-types": "^0.2.35",
