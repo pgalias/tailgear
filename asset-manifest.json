@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tailgear/static/css/main.c8df8d3a.chunk.css",
-    "main.js": "/tailgear/static/js/main.b248b0c2.chunk.js",
-    "main.js.map": "/tailgear/static/js/main.b248b0c2.chunk.js.map",
-    "runtime-main.js": "/tailgear/static/js/runtime-main.bba229b2.js",
-    "runtime-main.js.map": "/tailgear/static/js/runtime-main.bba229b2.js.map",
-    "static/css/2.23bf27c0.chunk.css": "/tailgear/static/css/2.23bf27c0.chunk.css",
-    "static/js/2.8ba379d0.chunk.js": "/tailgear/static/js/2.8ba379d0.chunk.js",
-    "static/js/2.8ba379d0.chunk.js.map": "/tailgear/static/js/2.8ba379d0.chunk.js.map",
-    "static/js/3.6a978946.chunk.js": "/tailgear/static/js/3.6a978946.chunk.js",
-    "static/js/3.6a978946.chunk.js.map": "/tailgear/static/js/3.6a978946.chunk.js.map",
-    "index.html": "/tailgear/index.html",
-    "static/css/2.23bf27c0.chunk.css.map": "/tailgear/static/css/2.23bf27c0.chunk.css.map",
-    "static/css/main.c8df8d3a.chunk.css.map": "/tailgear/static/css/main.c8df8d3a.chunk.css.map",
-    "static/js/2.8ba379d0.chunk.js.LICENSE.txt": "/tailgear/static/js/2.8ba379d0.chunk.js.LICENSE.txt"
+    "main.css": "/zephyrus/static/css/main.c8df8d3a.chunk.css",
+    "main.js": "/zephyrus/static/js/main.d5963b5f.chunk.js",
+    "main.js.map": "/zephyrus/static/js/main.d5963b5f.chunk.js.map",
+    "runtime-main.js": "/zephyrus/static/js/runtime-main.4f83f472.js",
+    "runtime-main.js.map": "/zephyrus/static/js/runtime-main.4f83f472.js.map",
+    "static/css/2.23bf27c0.chunk.css": "/zephyrus/static/css/2.23bf27c0.chunk.css",
+    "static/js/2.bba41e0e.chunk.js": "/zephyrus/static/js/2.bba41e0e.chunk.js",
+    "static/js/2.bba41e0e.chunk.js.map": "/zephyrus/static/js/2.bba41e0e.chunk.js.map",
+    "static/js/3.c73fa4d6.chunk.js": "/zephyrus/static/js/3.c73fa4d6.chunk.js",
+    "static/js/3.c73fa4d6.chunk.js.map": "/zephyrus/static/js/3.c73fa4d6.chunk.js.map",
+    "index.html": "/zephyrus/index.html",
+    "static/css/2.23bf27c0.chunk.css.map": "/zephyrus/static/css/2.23bf27c0.chunk.css.map",
+    "static/css/main.c8df8d3a.chunk.css.map": "/zephyrus/static/css/main.c8df8d3a.chunk.css.map",
+    "static/js/2.bba41e0e.chunk.js.LICENSE.txt": "/zephyrus/static/js/2.bba41e0e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bba229b2.js",
+    "static/js/runtime-main.4f83f472.js",
     "static/css/2.23bf27c0.chunk.css",
-    "static/js/2.8ba379d0.chunk.js",
+    "static/js/2.bba41e0e.chunk.js",
     "static/css/main.c8df8d3a.chunk.css",
-    "static/js/main.b248b0c2.chunk.js"
+    "static/js/main.d5963b5f.chunk.js"
   ]
 }
