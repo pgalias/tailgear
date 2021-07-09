@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
 import { LiveEditor, LiveError, LivePreview } from 'react-live';
 import parse from 'html-react-parser';
 import { useComponentCode } from '../../hooks/useComponentCode';
@@ -7,25 +7,28 @@ import { LiveCoding, LiveEditorStyles } from '../../components/liveCoding';
 import styles from './styles.module.css';
 
 type Props = {
-  name: string;
+  name?: string;
   component: FC;
   disclaimer?: string;
-  isNameVisible: boolean;
 };
 
-export const Variant: FC<Props> = ({
-  name,
-  component,
-  disclaimer,
-  isNameVisible,
-}) => {
+export const Variant: FC<Props> = ({ name, component, disclaimer }) => {
+  const copyButtonRef = useRef<HTMLButtonElement>(null);
   const code = useComponentCode(component);
 
-  const copyCode = () => Clipboard.write(code);
+  const copyCode = () => {
+    // potentially risky solution for receiving current code
+    // it might be broken when eg. library will change the HTML structure
+    const currentCode =
+      copyButtonRef.current?.parentElement?.querySelector('textarea')
+        ?.textContent ?? code;
+
+    Clipboard.write(currentCode);
+  };
 
   return (
     <div className={styles.variant}>
-      {isNameVisible && <h5 className={styles.variantName}>{name}</h5>}
+      {name && <h5 className={styles.variantName}>{name}</h5>}
       <LiveCoding code={code}>
         <div className={styles.variantCode}>
           <div className={styles.variantCodeRow}>
@@ -35,6 +38,7 @@ export const Variant: FC<Props> = ({
             <LiveEditor style={LiveEditorStyles} />
             <LiveError />
             <button
+              ref={copyButtonRef}
               className={styles.copyCode}
               type="button"
               onClick={copyCode}
@@ -44,7 +48,11 @@ export const Variant: FC<Props> = ({
           </div>
         </div>
       </LiveCoding>
-      {disclaimer && <p className={styles.disclaimer}>{parse(disclaimer)}</p>}
+      {disclaimer && (
+        <blockquote role="blockquote" className={styles.disclaimer}>
+          {parse(disclaimer)}
+        </blockquote>
+      )}
     </div>
   );
 };

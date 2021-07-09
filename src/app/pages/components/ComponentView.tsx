@@ -38,9 +38,8 @@ export const ComponentView: FC<Props> = ({
       {variants.map((variant, index) => (
         <Fragment key={variant.name}>
           <Variant
-            name={variant.name}
+            name={variantsCount > 1 ? variant.name : undefined}
             component={variant.component}
-            isNameVisible={variantsCount > 1}
             disclaimer={variant.disclaimer}
           />
           {index < variantsCount - 1 && (
@@ -50,6 +49,7 @@ export const ComponentView: FC<Props> = ({
       ))}
       {disclaimer && (
         <blockquote
+          role="blockquote"
           className={`${styles.disclaimer} ${styles.componentDisclaimer}`}
         >
           {parse(disclaimer)}
