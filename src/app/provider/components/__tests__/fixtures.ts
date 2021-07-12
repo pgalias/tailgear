@@ -79,7 +79,7 @@ export const section1: Section = {
 
 export const section2: Section = {
   id: 'section_2',
-  title: 'Modules',
+  title: 'Templates',
   blocks: [block3],
 };
 
