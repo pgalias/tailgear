@@ -38,9 +38,7 @@ describe('app::Layout', () => {
     expect(navigation).toBeInTheDocument();
 
     // click any link from the navigation
-    userEvent.click(
-      within(navigation).getByRole('link', { name: /with additional content/i })
-    );
+    userEvent.click(within(navigation).getByRole('link', { name: /alerts/i }));
 
     expect(navigation).not.toBeInTheDocument();
   });

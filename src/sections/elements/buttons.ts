@@ -5,6 +5,7 @@ import { Block } from '../types';
 export const Buttons: Block = {
   title: 'Buttons',
   icon: faMousePointer,
+  url: '/buttons',
   components: [
     {
       name: 'Basic',

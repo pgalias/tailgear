@@ -75,6 +75,7 @@ const withAdditionalContentAlert: Component = {
 
 export const Alerts: Block = {
   title: 'Alerts',
+  url: '/alerts',
   icon: faExclamationCircle,
   components: [simpleAlerts, withIconAlerts, withAdditionalContentAlert],
 };

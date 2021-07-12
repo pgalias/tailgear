@@ -17,6 +17,7 @@ export interface Component extends ComponentCommonProps {
 
 export interface Block {
   title: string;
+  url: string;
   icon?: IconDefinition;
   components: Component[];
 }

@@ -10,21 +10,12 @@ export const LinksList: FC = () => {
       {sections.map((section) => (
         <LinkGroup title={section.title} key={section.id}>
           {section.blocks.map((block) => (
-            <LinkGroup
-              title={block.title}
+            <Link
+              name={block.title}
+              href={block.url}
               icon={block.icon}
               key={block.id}
-              expandable
-            >
-              {block.components.map((component) => (
-                <Link
-                  name={component.name}
-                  section={block.title}
-                  href={component.url}
-                  key={component.id}
-                />
-              ))}
-            </LinkGroup>
+            />
           ))}
         </LinkGroup>
       ))}

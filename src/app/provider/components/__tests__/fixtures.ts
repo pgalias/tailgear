@@ -52,6 +52,7 @@ export const block1: Block = {
   id: 'block_1',
   sectionId: 'section_1',
   title: 'block 1',
+  url: '/block-1',
 };
 
 export const block2: Block = {
@@ -59,6 +60,7 @@ export const block2: Block = {
   id: 'block_2',
   sectionId: 'section_1',
   title: 'block 2',
+  url: '/block-2',
 };
 
 export const block3: Block = {
@@ -66,6 +68,7 @@ export const block3: Block = {
   id: 'block_3',
   sectionId: 'section_2',
   title: 'block 3',
+  url: '/block-3',
 };
 
 /**
@@ -79,7 +82,7 @@ export const section1: Section = {
 
 export const section2: Section = {
   id: 'section_2',
-  title: 'Modules',
+  title: 'Templates',
   blocks: [block3],
 };
 
@@ -98,6 +101,7 @@ export const domainComponent1: DomainComponent = {
 export const domainBlock1: DomainBlock = {
   components: [domainComponent1],
   title: 'domain block 1',
+  url: '/domain-block-1',
 };
 
 /**

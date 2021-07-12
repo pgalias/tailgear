@@ -2,8 +2,23 @@
   @apply relative;
 }
 
-.breadcrumbs {
-  @apply text-xs;
+.component:not(:last-of-type) {
+  @apply border-b-2 border-dashed border-red-300 mb-12 pb-4;
+}
+
+.componentGroup {
+  @apply text-2xl capitalize;
+}
+
+.componentGroupCount {
+  @apply bg-amber-500 text-blueGray-50;
+  @apply w-4 h-4 rounded-full;
+  @apply text-sm;
+  @apply inline-flex items-center justify-center;
+}
+
+:global(.dark) .componentGroupCount {
+  @apply bg-amber-400 text-blueGray-700;
 }
 
 .variant {

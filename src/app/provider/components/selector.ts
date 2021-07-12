@@ -1,12 +1,9 @@
-import { Block, Section, Component, BlockId, SectionId } from './types';
+import { Block, BlockId, Section, SectionId } from './types';
 
 export const selectSections = (store: Section[]): Section[] => store;
 
 export const flattenAllBlocks = (store: Section[]): Block[] =>
   store.flatMap(({ blocks }) => blocks);
-
-export const flattenAllComponents = (store: Section[]): Component[] =>
-  flattenAllBlocks(store).flatMap(({ components }) => components);
 
 export const findBlockBy = (id: BlockId) => (
   store: Section[]

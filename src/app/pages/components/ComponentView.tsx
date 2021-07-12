@@ -3,20 +3,13 @@ import parse from 'html-react-parser';
 import { Variant as VariantType } from '../../../sections/types';
 import { Variant } from './Variant';
 import styles from './styles.module.css';
-import {
-  BlockId,
-  findBlockBy,
-  findSectionBy,
-  SectionId,
-  useSelector,
-} from '../../provider/components';
+import { BlockId, findBlockBy, useSelector } from '../../provider/components';
 
 type Props = {
   name: string;
   variants: VariantType[];
   disclaimer?: string;
   blockId: BlockId;
-  sectionId: SectionId;
 };
 
 export const ComponentView: FC<Props> = ({
@@ -24,16 +17,15 @@ export const ComponentView: FC<Props> = ({
   variants,
   disclaimer,
   blockId,
-  sectionId,
 }) => {
   const block = useSelector(findBlockBy(blockId));
-  const section = useSelector(findSectionBy(sectionId));
   const variantsCount = variants.length;
 
   return (
     <div className={styles.component}>
-      <h4 className={styles.breadcrumbs}>
-        {section?.title} {'>'} {block?.title} {'>'} {name}
+      <h4 className={styles.componentGroup}>
+        {name} {block?.title}{' '}
+        <sup className={styles.componentGroupCount}>{variants.length}</sup>
       </h4>
       {variants.map((variant, index) => (
         <Fragment key={variant.name}>
