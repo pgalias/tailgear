@@ -43,15 +43,4 @@ describe('app::components::Header', () => {
       screen.getByRole('button', { name: /open the menu/i })
     ).toBeInTheDocument();
   });
-
-  test('should render logo component', () => {
-    render(
-      <Header isNavigationVisible onHamburgerClick={jest.fn()}>
-        <span>child</span>
-      </Header>,
-      { wrapper: Wrapper }
-    );
-
-    expect(screen.getByAltText(/no logo yet/i)).toBeInTheDocument();
-  });
 });

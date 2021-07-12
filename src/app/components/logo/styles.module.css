@@ -1,0 +1,11 @@
+.logo {
+  @apply inline-block h-8 w-48;
+}
+
+.logo path {
+  @apply text-blueGray-700 fill-current;
+}
+
+:global(.dark) .logo path {
+  @apply text-blueGray-50;
+}

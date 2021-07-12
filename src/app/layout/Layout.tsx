@@ -13,6 +13,7 @@ import { ColorSchemeSwitcher } from '../components/colorSchemeSwitcher';
 import styles from './layout.module.css';
 
 export const Layout: FC = () => {
+  const [isTabletOrLargerDevice, setIsTabletOrLargerDevice] = useState(false);
   const [showNavigation, setShowNavigation] = useState(false);
   const { width } = useWindowDimensions();
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ export const Layout: FC = () => {
     const shouldNavigationBeVisible = width >= NAVIGATION_VISIBILITY_BREAKPOINT;
 
     setShowNavigation(shouldNavigationBeVisible);
+    setIsTabletOrLargerDevice(shouldNavigationBeVisible);
   }, [pathname, width]);
 
   const onHamburgerClick = () => {
@@ -38,10 +40,11 @@ export const Layout: FC = () => {
         onHamburgerClick={onHamburgerClick}
         isNavigationVisible={showNavigation}
       >
-        <ColorSchemeSwitcher />
+        {isTabletOrLargerDevice && <ColorSchemeSwitcher />}
       </Header>
       {showNavigation && (
         <Navigation>
+          {!isTabletOrLargerDevice && <ColorSchemeSwitcher />}
           <StaticLinksList />
           <ComponentsLinksList />
         </Navigation>

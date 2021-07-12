@@ -7,7 +7,7 @@ import { ColorScheme } from '../../../helpers/colorScheme';
 import styles from './header.module.css';
 
 type Props = {
-  children: JSX.Element | JSX.Element[];
+  children?: React.ReactNode;
   isNavigationVisible: boolean;
   onHamburgerClick: () => void;
 };
@@ -28,6 +28,7 @@ export const Header: FunctionComponent<Props> = ({
     <header className={styles.header}>
       <div className={styles.navigation}>
         <div className={styles.left}>
+          <Logo />
           <button
             className={`${styles.button} ${styles.hamburger}`}
             type="button"
@@ -45,9 +46,8 @@ export const Header: FunctionComponent<Props> = ({
               aria-hidden="true"
             />
           </button>
-          <Logo />
         </div>
-        <div>{children}</div>
+        <div className={styles.right}>{children}</div>
       </div>
     </header>
   );

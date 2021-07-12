@@ -1,10 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import { ReactComponent as Zephyrus } from '../../../assets/images/logo.svg';
+import styles from './styles.module.css';
 
 export const Logo: FunctionComponent = () => (
-  <img
-    className="inline-block"
-    src="https://via.placeholder.com/150x50?text=put+logo+here"
-    alt="No logo yet :)"
-    title="No logo yet :)"
-  />
+  <Zephyrus className={styles.logo} />
 );
