@@ -1,36 +1,45 @@
 .section {
-    @apply mt-7;
+  @apply mt-7;
 }
 
 .section .section {
-    @apply mt-2.5;
+  @apply mt-2.5;
 }
 
 .sectionList {
-    @apply pl-2;
+  @apply pl-0 max-h-0 opacity-0 invisible;
+}
+
+.sectionList.expanded {
+  @apply pl-2 max-h-screen opacity-100 visible;
+}
+
+.expandIcon {
+  @apply float-right;
 }
 
 .sectionList .sectionList {
-    @apply pl-6;
+  @apply pl-6;
 }
 
 .section .icon,
 .link .icon {
-    @apply w-5 text-sm;
+  @apply w-5 text-sm;
 }
 
-.sectionTitleText, .linkName {
-    @apply align-middle;
+.sectionTitleText,
+.linkName {
+  @apply align-middle;
 }
 
 .link {
-    @apply capitalize;
+  @apply capitalize;
 }
 
 .activeLink {
-    @apply text-blue-400 text-opacity-80;
+  @apply text-blue-400 text-opacity-80;
 }
 
 :global(.dark) .activeLink {
-    @apply text-teal-200;
+  @apply text-teal-200;
 }
