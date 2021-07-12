@@ -22,6 +22,6 @@ export interface Block {
 }
 
 export interface Section {
-  title: 'Elements' | 'Modules';
+  title: 'Elements' | 'Templates';
   blocks: Block[];
 }

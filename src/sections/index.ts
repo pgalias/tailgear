@@ -1,3 +1,3 @@
-import { Elements, Modules } from './elements';
+import { Elements, Templates } from './elements';
 
-export default [Elements, Modules];
+export default [Elements, Templates];

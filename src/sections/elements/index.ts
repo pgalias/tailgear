@@ -7,7 +7,7 @@ export const Elements: Section = {
   blocks: [Alerts, Buttons],
 };
 
-export const Modules: Section = {
-  title: 'Modules',
+export const Templates: Section = {
+  title: 'Templates',
   blocks: [],
 };
