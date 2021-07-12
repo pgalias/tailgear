@@ -1,58 +1,62 @@
 .component {
-    @apply relative;
+  @apply relative;
 }
 
 .breadcrumbs {
-    @apply text-xs;
+  @apply text-xs;
 }
 
 .variant {
-    @apply my-8 relative;
+  @apply my-8 relative;
 }
 
 .variantName {
-    @apply text-lg mb-4;
+  @apply text-lg mb-4;
 }
 
 .variantCode {
-    @apply grid grid-cols-1 gap-2.5;
+  @apply grid grid-cols-1 gap-2.5;
 }
 
 .variantCodeRow {
-    @apply relative;
+  @apply relative;
 }
 
 .variantDivider {
-    @apply border-blue-800;
+  @apply border-blue-800;
+}
+
+:global(.dark) .variantDivider {
+  @apply border-blue-300;
 }
 
 .copyCode {
-    @apply xl:absolute xl:top-0 xl:right-1 z-10;
-    @apply py-2.5 px-3 xl:text-sm xl:py-1.5 xl:px-2;
-    @apply bg-blue-100 hover:bg-blue-200 rounded transition-colors duration-75 ease-linear;
-    @apply w-full sm:w-96 xl:w-auto;
-    @apply block xl:inline my-4 xl:my-0 mx-auto
+  @apply xl:absolute xl:top-0 xl:right-1 z-10;
+  @apply py-2.5 px-3 xl:text-sm xl:py-1.5 xl:px-2;
+  @apply bg-blue-100 hover:bg-blue-200 rounded transition-colors duration-75 ease-linear;
+  @apply w-full sm:w-96 xl:w-auto;
+  @apply block xl:inline my-4 xl:my-0 mx-auto;
 }
 
 :global(.dark) .copyCode {
-    @apply bg-blue-300 hover:bg-blue-400 text-blueGray-800;
+  @apply bg-blue-300 hover:bg-blue-400 text-blueGray-800;
 }
 
 .disclaimer {
-    @apply py-2 px-6;
-    @apply text-xs text-left italic;
-    @apply bg-gray-200 bg-opacity-50;
-    @apply border-2 border-gray-300 border-opacity-60;
+  @apply py-2 px-6;
+  @apply text-xs text-left italic;
+  @apply bg-gray-200 bg-opacity-50;
+  @apply border-2 border-gray-300 border-opacity-60;
 }
 
 :global(.dark) .disclaimer {
-    @apply text-black;
+  @apply text-black;
 }
 
 .disclaimer a {
-    @apply border-dotted border-b-2 border-gray-900;
+  @apply border-dotted border-b-2 border-gray-900;
 }
 
 .componentDisclaimer {
-    @apply text-sm bg-opacity-75 mt-6;
+  @apply text-sm bg-opacity-75 mt-6;
 }
