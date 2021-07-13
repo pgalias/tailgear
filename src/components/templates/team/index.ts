@@ -1,0 +1,1 @@
+export { Minimalistic } from './minimalistic';

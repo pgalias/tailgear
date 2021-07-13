@@ -9,7 +9,7 @@ import {
   InfoAlert,
   InfoWithIconAlert,
   WithAdditionalContentAlert,
-} from '../../components/alerts';
+} from '../../components/elements/alerts';
 import { Block, Component } from '../types';
 
 const simpleAlerts: Component = {
