@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/zephyrus/static/css/main.7911e9d9.chunk.css",
-    "main.js": "/zephyrus/static/js/main.a529914e.chunk.js",
-    "main.js.map": "/zephyrus/static/js/main.a529914e.chunk.js.map",
+    "main.js": "/zephyrus/static/js/main.5a83ff7d.chunk.js",
+    "main.js.map": "/zephyrus/static/js/main.5a83ff7d.chunk.js.map",
     "runtime-main.js": "/zephyrus/static/js/runtime-main.636a5fc4.js",
     "runtime-main.js.map": "/zephyrus/static/js/runtime-main.636a5fc4.js.map",
     "static/css/2.23bf27c0.chunk.css": "/zephyrus/static/css/2.23bf27c0.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.23bf27c0.chunk.css",
     "static/js/2.13106cc5.chunk.js",
     "static/css/main.7911e9d9.chunk.css",
-    "static/js/main.a529914e.chunk.js"
+    "static/js/main.5a83ff7d.chunk.js"
   ]
 }
