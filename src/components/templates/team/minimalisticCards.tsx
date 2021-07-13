@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-export const Minimalistic: FC = () => (
+export const MinimalisticCards: FC = () => (
   <section className="text-gray-800 dark:text-gray-50">
     <h2 className="text-3xl text-center mb-4">Our team</h2>
     <p className="text-center mb-8">
