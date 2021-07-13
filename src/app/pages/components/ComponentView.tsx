@@ -24,8 +24,10 @@ export const ComponentView: FC<Props> = ({
   return (
     <div className={styles.component}>
       <h4 className={styles.componentGroup}>
-        {name} {block?.title}{' '}
-        <sup className={styles.componentGroupCount}>{variants.length}</sup>
+        {block?.title} :: {name}{' '}
+        {variants.length > 1 && (
+          <sup className={styles.componentGroupCount}>{variants.length}</sup>
+        )}
       </h4>
       {variants.map((variant, index) => (
         <Fragment key={variant.name}>

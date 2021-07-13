@@ -4,7 +4,6 @@ import { Block, Component } from '../types';
 
 const minimalistic: Component = {
   name: 'Minimalistic',
-  url: '/team/minimalistic',
   variants: [
     {
       name: 'Minimalistic',
@@ -18,5 +17,6 @@ const minimalistic: Component = {
 export const Team: Block = {
   title: 'Team',
   icon: faUsers,
+  url: '/team',
   components: [minimalistic],
 };

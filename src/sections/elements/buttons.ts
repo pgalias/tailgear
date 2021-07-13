@@ -9,7 +9,6 @@ export const Buttons: Block = {
   components: [
     {
       name: 'Basic',
-      url: '/buttons/basic',
       variants: [{ name: 'Basic', component: BasicButton }],
     },
   ],

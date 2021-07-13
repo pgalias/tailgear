@@ -13,7 +13,6 @@ export const component1: Component = {
   id: 'component_1',
   name: 'component 1',
   sectionId: 'section_1',
-  url: '/component-1',
   variants: [],
 };
 
@@ -22,7 +21,6 @@ export const component2: Component = {
   id: 'component_2',
   name: 'component 2',
   sectionId: 'section_1',
-  url: '/component-2',
   variants: [],
 };
 
@@ -31,7 +29,6 @@ export const component3: Component = {
   id: 'component_3',
   name: 'component 3',
   sectionId: 'section_1',
-  url: '/component-3',
   variants: [],
 };
 
@@ -40,7 +37,6 @@ export const component4: Component = {
   id: 'component_4',
   name: 'component 4',
   sectionId: 'section_2',
-  url: '/component-4',
   variants: [],
 };
 
@@ -91,7 +87,6 @@ export const section2: Section = {
  */
 export const domainComponent1: DomainComponent = {
   name: 'domain component 1',
-  url: '/domain-component-1',
   variants: [],
 };
 

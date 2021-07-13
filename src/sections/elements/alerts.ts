@@ -14,7 +14,6 @@ import { Block, Component } from '../types';
 
 const simpleAlerts: Component = {
   name: 'Simple',
-  url: '/alerts/simple',
   variants: [
     { name: 'Info', component: InfoAlert },
     { name: 'Warning', component: WarningAlert },
@@ -28,7 +27,6 @@ const disclaimerForIconAlerts = (name: string, link: string): string =>
 
 const withIconAlerts: Component = {
   name: 'With icon',
-  url: '/alerts/with-icon',
   variants: [
     {
       name: 'Info',
@@ -67,7 +65,6 @@ const withIconAlerts: Component = {
 
 const withAdditionalContentAlert: Component = {
   name: 'With additional content',
-  url: '/alerts/with-additional-content',
   variants: [
     { name: 'With body and footer', component: WithAdditionalContentAlert },
   ],

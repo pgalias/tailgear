@@ -11,7 +11,6 @@ export interface Variant extends ComponentCommonProps {
 }
 
 export interface Component extends ComponentCommonProps {
-  url: string;
   variants: Variant[];
 }
 

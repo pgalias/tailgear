@@ -7,7 +7,7 @@
 }
 
 .componentGroup {
-  @apply text-2xl capitalize;
+  @apply text-2xl;
 }
 
 .componentGroupCount {
