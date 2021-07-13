@@ -1,1 +1,2 @@
-export { Minimalistic } from './minimalistic';
+export { MinimalisticCards } from './minimalisticCards';
+export { MinimalisticBigPhotos } from './minimalisticBigPhotos';
