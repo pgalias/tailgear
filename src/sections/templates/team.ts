@@ -35,6 +35,8 @@ const inSlider: Component = {
     {
       name: 'Glass',
       component: InSliderGlass,
+      disclaimer:
+        "Note that section is wrapped with div - it's used only for this sample purpose - do not copy it into your application. Also w-5/6 and mx-auto classes in section element are also used only for this sample purpose.",
     },
   ],
   disclaimer:
