@@ -12,8 +12,8 @@ import {
 import { EMPLOYEES, RandomMediumLargeAvatar } from './utils';
 
 export const InSliderGlass: FC = () => (
-  <div className="bg-gradient-to-br from-lime-300 to-amber-400 rounded-lg">
-    <section className="bg-white dark:bg-coolGray-800 bg-opacity-80 dark:bg-opacity-80 backdrop-blur-xl backdrop-filter rounded-lg p-8 shadow-lg">
+  <div className="bg-glass-sample-light dark:bg-glass-sample-dark py-20">
+    <section className="w-5/6 mx-auto backdrop-blur backdrop-filter rounded-lg p-8 shadow-lg">
       <h3 className="text-lg text-blue-900 dark:text-blue-200 font-bold mt-0 mb-4">
         Our team
       </h3>
