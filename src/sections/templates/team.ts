@@ -25,7 +25,6 @@ const minimalistic: Component = {
 
 const inSlider: Component = {
   name: 'In slider',
-  url: '/team/in-slider',
   variants: [
     {
       name: 'Normal',
